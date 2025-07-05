@@ -1,0 +1,19 @@
+:root {
+  --bg: #fff; --fg: #222; --accent: #0A66C2;
+}
+body.dark {
+  --bg: #111; --fg: #eee; --accent: #66A9FF;
+}
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: Arial, sans-serif;
+  transition: background .3s, color .3s;
+}
+nav { display: flex; justify-content: space-between; padding:1rem; position:sticky; top:0; background:var(--bg); }
+.hero { text-align:center; padding:4rem 1rem; background: linear-gradient(...); }
+.timeline-container { position: relative; margin:2rem; }
+.timeline-item { display:flex; align-items:flex-start; margin-bottom:2rem; }
+.timeline-marker { width:16px; height:16px; border-radius:50%; background:var(--accent); margin-right:1rem; }
+.cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem; padding:2rem 1rem; }
+.card { background:var(--bg); border:1px solid var(--accent); border-radius:8px; padding:1rem; text-align:center; }
+.copy-btn { background:none; border:none; cursor:pointer; margin-left:8px; }
