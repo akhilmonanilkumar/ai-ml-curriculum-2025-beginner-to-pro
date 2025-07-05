@@ -1,727 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comprehensive 6-Month AI/ML + LLM Curriculum for Engineers</title>
-<style>
-body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-line-height: 1.6;
-margin: 0;
-padding: 20px;
-background-color: #f4f7f6;
-color: #333;
-}
-.container {
-max-width: 1000px;
-margin: 20px auto;
-background-color: #ffffff;
-padding: 30px 40px;
-border-radius: 10px;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-h1, h2, h3, h4 {
-color: #2c3e50;
-margin-top: 30px;
-margin-bottom: 15px;
-}
-h1 {
-font-size: 2.5em;
-text-align: center;
-color: #2980b9;
-border-bottom: 2px solid #3498db;
-padding-bottom: 15px;
-margin-bottom: 30px;
-}
-h2 {
-font-size: 2em;
-color: #34495e;
-border-bottom: 1px solid #ecf0f1;
-padding-bottom: 10px;
-margin-top: 40px;
-}
-h3 {
-font-size: 1.5em;
-color: #34495e;
-margin-top: 25px;
-}
-h4 {
-font-size: 1.2em;
-color: #555;
-margin-top: 20px;
-}
-p {
-margin-bottom: 10px;
-}
-ul, ol {
-margin-bottom: 10px;
-padding-left: 25px;
-}
-ul li, ol li {
-margin-bottom: 5px;
-}
-table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 20px;
-margin-bottom: 20px;
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-table th, table td {
-border: 1px solid #ddd;
-padding: 12px 15px;
-text-align: left;
-}
-table th {
-background-color: #f2f2f2;
-font-weight: bold;
-color: #555;
-}
-table tr:nth-child(even) {
-background-color: #f9f9f9;
-}
-table tr:hover {
-background-color: #f1f1f1;
-}
-a {
-color: #3498db;
-text-decoration: none;
-}
-a:hover {
-text-decoration: underline;
-}
-.prepared-by {
-text-align: center;
-margin-bottom: 40px;
-font-size: 1.1em;
-color: #666;
-}
-.prepared-by strong {
-color: #2c3e50;
-}
-.executive-summary {
-background-color: #ecf0f1;
-padding: 20px;
-border-left: 5px solid #3498db;
-margin-bottom: 30px;
-border-radius: 5px;
-}
-.citation {
-font-size: 0.9em;
-color: #7f8c8d;
-}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI/ML Learning Path</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    /* Core Variables & Reset */
+    :root {
+      --bg: #fff; --fg: #222;
+      --card-bg: #f9f9f9;
+      --accent: #0A66C2;
+      --highlight: #eef7ff;
+    }
+    [data-theme="dark"] {
+      --bg: #1a1a1a; --fg: #eee;
+      --card-bg: #222;
+      --accent: #66A9FF;
+      --highlight: #2a2a2a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      transition: background .3s, color .3s;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Navbar & Hero */
+    header { position: sticky; top:0; background: var(--bg); z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+    nav { max-width:1200px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:1rem; }
+    .logo { font-weight:bold; font-size:1.2em; }
+    .menu { display:flex; gap:1rem; }
+    .menu a { padding:0.5rem; }
+    #theme-toggle { background:none; border:none; font-size:1.2em; cursor:pointer; }
+    .hero {
+      text-align:center;
+      padding:4rem 1rem;
+      background: linear-gradient(135deg, var(--accent) 0%, #66d7ee 100%);
+      color:#fff;
+    }
+
+    /* LinkedIn Follow Button */
+    .libutton {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:7px; text-align:center; color:#fff; width:200px; height:32px;
+      border-radius:16px; background-color:#0A66C2; font-family:"SF Pro Text",Helvetica,sans-serif;
+      margin:auto; text-decoration:none;
+    }
+
+    /* Sections & Cards */
+    main { max-width:1200px; margin:auto; padding:1rem; }
+    section { margin-bottom:3rem; }
+    section h2 { font-size:1.6em; margin-bottom:1rem; display:flex; align-items:center; }
+    .copy-btn { background:none; border:none; cursor:pointer; margin-left:8px; font-size:0.9em; }
+    .cards-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border:1px solid var(--accent);
+      border-radius:8px;
+      padding:1rem;
+      text-align:center;
+      transition: transform .2s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card i {
+      font-size:2em;
+      margin-bottom:0.5rem;
+      color:var(--accent);
+    }
+
+    /* Timeline */
+    .timeline-container {
+      position: relative;
+      margin-left: 2rem;
+      padding-left: 2rem;
+      border-left: 4px solid var(--accent);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom:2rem;
+    }
+    .timeline-item::before {
+      content: attr(data-date);
+      position: absolute;
+      left: -7.5rem;
+      width:6rem;
+      font-size:0.9em;
+      color: var(--fg);
+      background: var(--highlight);
+      padding:0.25rem 0.5rem;
+      border-radius:4px;
+    }
+    .timeline-item .timeline-marker {
+      position:absolute;
+      left: -6px;
+      top:0.25rem;
+      width:12px; height:12px;
+      border-radius:50%;
+      background: var(--accent);
+    }
+    .timeline-item .timeline-content {
+      padding:0.5rem 1rem;
+      background: var(--card-bg);
+      border-radius:6px;
+    }
+
+    /* Responsive tweaks */
+    @media(max-width:600px){
+      nav { flex-direction:column; gap:1rem; }
+      .timeline-item::before { display:none; }
+      .timeline-container { margin-left:0; padding-left:1rem; }
+    }
+  </style>
 </head>
-<body>
-<div class="container">
-<div class="prepared-by">
-<p><strong>Prepared by Akhil Anilkumar, Senior AI ML Engineer, Cubet</strong></p>
-<p>Email: <a href="mailto:akhil.anilkumar@cubettech.com">akhil.anilkumar@cubettech.com</a></p>
-<p>LinkedIn: <a href="[https://www.linkedin.com/in/akhilmon-anilkumar](https://www.linkedin.com/in/akhilmon-anilkumar)" target="_blank">https://www.linkedin.com/in/akhilmon-anilkumar</a></p>
-</div>
-<h1>Comprehensive 6-Month AI/ML + LLM Curriculum for Engineers: From Beginner to Professional</h1>
-<div class="executive-summary">
-<h3>Executive Summary</h3>
-<p>This report outlines a comprehensive 6-month (24-week) AI/ML and Large Language Model (LLM) professional development curriculum, meticulously designed to transform engineers from foundational learners into proficient practitioners. The program emphasizes a structured, hands-on approach, integrating theoretical knowledge with practical application across machine learning, deep learning, LLMs, agent design, deployment, and full-stack AI development. By following a spiral learning methodology, the curriculum ensures progressive skill acquisition, building from core mathematical and programming prerequisites to advanced, real-world AI solutions. Ethical considerations, data privacy, and critical thinking are woven throughout, preparing engineers not just for technical mastery but also for responsible AI development. The ultimate goal is to equip participants with the skills and portfolio necessary to excel as professional Machine Learning Engineers.</p>
-</div>
-<h2>1. Introduction: Charting Your Path to AI/ML Professionalism</h2>
-<h3>1.1 Program Vision: From Novice to Expert Engineer in AI/ML & LLMs</h3>
-<p>This curriculum is engineered to bridge the gap between theoretical understanding and practical application in the rapidly evolving fields of Artificial Intelligence (AI) and Machine Learning (ML), with a specialized focus on Large Language Models (LLMs). The vision is to cultivate engineers who can not only comprehend complex AI concepts but also implement, deploy, and maintain robust AI systems in real-world scenarios. The program is structured to provide a comprehensive, day-by-day learning journey that culminates in a professional-level skill set, addressing the increasing demand for proficient ML engineers.<span class="citation"></span></p>
-<h3>1.2 Target Audience: Engineers Ready for AI Transformation</h3>
-<p>This program is specifically tailored for engineers with a foundational understanding of programming and problem-solving, who are eager to pivot into or deepen their expertise in AI/ML. Prior experience in software development principles such as object-oriented programming, dynamic systems, and version control will be highly beneficial, as these skills form a strong base for the transition to ML engineering.<span class="citation"></span> The curriculum is designed to accommodate learners from a beginner level in AI/ML, guiding them systematically towards professional proficiency.</p>
-<h3>1.3 Core Philosophy: Structured Learning, Hands-on Mastery, and Ethical AI</h3>
-<p>The program's philosophy is rooted in several pedagogical best practices <span class="citation"></span>:</p>
-<ul>
-<li><strong>Structured Learning Paths:</strong> AI can generate custom curricula adapted to each student's strengths and weaknesses, and adaptive assessment systems can adjust difficulty in real-time.<span class="citation"></span> This curriculum provides a meticulously planned sequence of topics, ensuring a logical progression from fundamental concepts to advanced applications.<span class="citation"></span></li>
-<li><strong>Hands-on Mastery:</strong> Theoretical knowledge is foundational, but true mastery comes from practical application.<span class="citation"></span> The curriculum heavily emphasizes hands-on projects, coding exercises, and real-world problem-solving to bridge the gap between theory and practice, allowing engineers to confront and overcome challenges like messy data, model tuning, and deployment.<span class="citation"></span> Exposure to learning through adaptive-gaming experiences and esports can also inspire students.<span class="citation"></span></li>
-<li><strong>Ethical AI Development:</strong> Responsible AI use is a core foundation.<span class="citation"></span> The curriculum integrates discussions on ethical considerations, data privacy, bias, and fairness throughout the learning journey, preparing engineers to develop AI systems that are not only effective but also equitable and trustworthy.<span class="citation"></span> Transparency with students about AI tools, data privacy, and potential biases is crucial.<span class="citation"></span></li>
-</ul>
-<h3>1.4 Navigating the Curriculum: A Spiral Learning Approach</h3>
-<p>The curriculum adopts a spiral learning approach <span class="citation"></span>, where foundational concepts are introduced early and then revisited with increasing complexity and depth across different phases. This iterative design reinforces learning and allows for a more intuitive grasp of interconnected AI/ML topics. The 24-week program is divided into six phases, each building upon the last, ensuring a smooth transition from beginner to professional.</p>
-<h4>Table 1: 6-Month AI/ML + LLM Curriculum Overview</h4>
-<table>
-<thead>
-<tr>
-<th>Phase</th>
-<th>Weeks</th>
-<th>Core Focus Areas</th>
-<th>Key Learning Outcomes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>1-4</td>
-<td>Foundations: Python, Data Science, & Essential Math</td>
-<td>Proficiency in Python for data manipulation and visualization; foundational understanding of statistics, probability, and linear algebra.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>5-8</td>
-<td>Core Machine Learning: Supervised & Unsupervised Learning</td>
-<td>Ability to implement, train, and evaluate classical ML models; understanding of feature engineering, model tuning, and cross-validation.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>9-12</td>
-<td>Deep Learning Fundamentals & Computer Vision</td>
-<td>Competence in designing, training, and deploying Convolutional Neural Networks (CNNs); practical experience with image classification and data augmentation.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>13-16</td>
-<td>Natural Language Processing (NLP) & Transformers</td>
-<td>Expertise in NLP fundamentals, text vectorization, word embeddings, and understanding the core Transformer architecture.</td>
-</tr>
-<tr>
-<td>5</td>
-<td>17-20</td>
-<td>Large Language Models (LLMs) & Agent Design</td>
-<td>Mastery of prompt engineering, LLM APIs, agent orchestration with frameworks like LangChain, RAG, and fine-tuning techniques.</td>
-</tr>
-<tr>
-<td>6</td>
-<td>21-24</td>
-<td>Full-Stack AI Development, MLOps & Capstones</td>
-<td>Ability to build, deploy, monitor, and maintain end-to-end AI applications, integrating various AI modalities and MLOps best practices.</td>
-</tr>
-</tbody>
-</table>
-<h2>2. Phase 1: Foundations – Python, Data Science, & Essential Mathematics (Weeks 1-4)</h2>
-<p>This initial phase establishes the indispensable bedrock for any aspiring AI/ML engineer. It systematically builds proficiency in Python programming, data manipulation, visualization, and the core mathematical concepts that underpin machine learning algorithms. A strong foundation in these areas is crucial, as deep learning, in particular, relies heavily on a solid grasp of Python, linear algebra, calculus, and probability.<span class="citation"></span></p>
-<h3>2.1 Setting Up the Development Environment</h3>
-<p>Establishing a robust and user-friendly development environment is the first practical step. This involves installing Python and configuring an Integrated Development Environment (IDE) that facilitates interactive coding and experimentation.</p>
-<ul>
-<li><strong>Python Installation and Package Management:</strong> The curriculum recommends installing Anaconda, which is the most widely used Python distribution for data science. Anaconda comes pre-loaded with essential libraries and tools, simplifying the setup process for beginners.<span class="citation"></span> This approach mitigates common initial setup hurdles, allowing learners to focus immediately on coding rather than dependency management.</li>
-<li><strong>Jupyter Notebook for Interactive Development:</strong> Jupyter Notebook is an incredibly powerful tool for interactively developing and presenting data science projects.<span class="citation"></span> It allows for the seamless combination of code, visualizations, and narrative text within a single document, fostering a cohesive and expressive workflow.<span class="citation"></span> Learners will become proficient in using Jupyter cells (code and Markdown), understanding the kernel, and utilizing keyboard shortcuts for efficient navigation and execution.<span class="citation"></span> This interactive environment is particularly beneficial for exploratory data analysis and iterative model development, which are hallmarks of machine learning engineering.<span class="citation"></span></li>
-</ul>
-<h3>2.2 Python Programming for Data Science</h3>
-<p>Python's extensive libraries, simplicity, and cross-platform support make it the prerequisite programming language for success in ML engineering.<span class="citation"></span> This section focuses on developing strong Python skills tailored for data manipulation and analysis.</p>
-<ul>
-<li><strong>Core Python Concepts:</strong> Reviewing fundamental Python programming concepts, including data types, control flow, functions, and object-oriented programming (OOP), is essential. While many engineers may have a background in programming, reinforcing these basics ensures a common understanding and prepares them for more complex data structures and algorithms.<span class="citation"></span></li>
-<li><strong>NumPy for Numerical Computing:</strong> NumPy is an essential Python package for data science, primarily known for its <code>ndarray</code> object, which provides efficient storage and manipulation of homogeneous multidimensional arrays.<span class="citation"></span> Learners will master array creation using functions like <code>np.zeros()</code>, <code>np.ones()</code>, <code>np.empty()</code>, <code>np.arange()</code>, and <code>np.linspace()</code>.<span class="citation"></span> Crucially, understanding basic operations such as element-wise products, matrix multiplication using the <code>@</code> operator or <code>dot()</code> function, and aggregate functions along specified axes (<code>sum()</code>, <code>min()</code>, <code>max()</code>, <code>cumsum()</code>) is vital for the mathematical operations inherent in machine learning algorithms.<span class="citation"></span> The ability to efficiently perform these operations is foundational for optimizing deep learning models.<span class="citation"></span></li>
-<li><strong>Pandas for Data Manipulation and Analysis:</strong> Pandas is a data manipulation package in Python specifically designed for tabular data, often referred to as DataFrames.<span class="citation"></span> It provides intuitive structures for working with rows and columns, akin to an Excel sheet.<span class="citation"></span> Learners will gain expertise in:
-<ul>
-<li><strong>Data Loading and Exporting:</strong> Importing datasets from various sources such as CSV, Excel, and JSON files, and even directly from SQL databases or URLs.<span class="citation"></span> The ability to output DataFrames to different file formats is also covered.<span class="citation"></span></li>
-<li><strong>Data Inspection and Understanding:</strong> Using methods like <code>.head()</code>, <code>.tail()</code>, <code>.describe()</code>, <code>.info()</code>, and <code>.shape</code> to quickly view and understand data characteristics, including identifying missing values with <code>.isnull()</code>.<span class="citation"></span></li>
-<li><strong>Data Cleaning and Preprocessing:</strong> Mastering techniques to handle missing data (dropping or replacing values), dealing with duplicate data, and renaming columns.<span class="citation"></span> This is a critical skill, as real-world data is often messy, incomplete, and biased, and proper cleaning is essential for accurate model performance.<span class="citation"></span></li>
-<li><strong>Data Analysis and Transformation:</strong> Applying summary operators (mean, mode, median), creating new columns based on existing ones, counting values with <code>.value_counts()</code>, aggregating data using <code>.groupby()</code>, and creating pivot tables for summarizing and analyzing data.<span class="citation"></span> These operations are fundamental for extracting meaningful features and insights from raw data.</li>
-</ul>
-</li>
-<li><strong>Matplotlib and Seaborn for Data Visualization:</strong> Effective data visualization is key to understanding data distributions, relationships between variables, and identifying patterns or anomalies.<span class="citation"></span> Learners will use Matplotlib and Seaborn to create various plot types, including scatter plots, line plots, histograms, box plots, violin plots, and heatmaps.<span class="citation"></span> The ability to customize visualizations for clarity and impact is emphasized, allowing engineers to effectively communicate data characteristics and model performance.<span class="citation"></span></li>
-</ul>
-<h3>2.3 Foundational Mathematics for AI/ML</h3>
-<p>A sound understanding of mathematical concepts, particularly linear algebra, calculus, probability, and statistics, is a must-have prerequisite for ML engineers.<span class="citation"></span> This section provides the necessary theoretical grounding.</p>
-<ul>
-<li><strong>Descriptive Statistics:</strong> This unit focuses on summarizing and describing data sets. It covers measures of central tendency (mean, median, mode) and measures of variability or dispersion (variance, standard deviation, interquartile range, skewness, and kurtosis).<span class="citation"></span> Understanding these measures helps in analyzing the shape and distribution of data, which is crucial for data preprocessing and model interpretation.<span class="citation"></span> The potential impact of outliers on the mean, and why the median is more robust, is also explored.<span class="citation"></span></li>
-<li><strong>Probability Theory:</strong> Probability theory provides the framework for reasoning in the face of uncertainty, which is inherent in most real-world data.<span class="citation"></span> Topics include:
-<ul>
-<li><strong>Basics:</strong> Sample space, events, random experiments, and random variables (discrete and continuous).<span class="citation"></span></li>
-<li><strong>Probability Rules:</strong> Addition rule, multiplication rule for independent events, and the complementary rule.<span class="citation"></span></li>
-<li><strong>Bayes' Theorem:</strong> A fundamental concept for updating probabilities based on new evidence, crucial for many machine learning algorithms like Naive Bayes classifiers.<span class="citation"></span> Understanding how Bayes' Theorem relates to concepts like True Positive Rate (TPR) and False Positive Rate (FPR) is also covered, which is essential for evaluating classification models.<span class="citation"></span></li>
-<li><strong>Probability Distributions:</strong> Introduction to Bernoulli and Binomial distributions, which are common representations of binary data and repeated trials.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Hypothesis Testing and A/B Testing:</strong> This section introduces statistical methods for making decisions about a population based on sample data.<span class="citation"></span>
-<ul>
-<li><strong>Core Concepts:</strong> Null hypothesis, alternative hypothesis, significance level, p-value, Z-scores, and t-tests.<span class="citation"></span></li>
-<li><strong>A/B Testing:</strong> Practical application of hypothesis testing for comparing two versions of a product or feature to determine which performs better, widely used in marketing and product development.<span class="citation"></span> This includes defining hypotheses, success metrics, and calculating sample size and duration for experiments.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Linear Algebra:</strong> Linear algebra is the backbone of many machine learning algorithms, providing the mathematical framework for handling high-dimensional data and transformations.<span class="citation"></span>
-<ul>
-<li><strong>Fundamental Concepts:</strong> Vectors (magnitude and direction), matrices (rectangular arrays), and scalars (single numerical values).<span class="citation"></span></li>
-<li><strong>Operations:</strong> Addition, subtraction, scalar multiplication, and crucially, the dot product (scalar product) and matrix multiplication, which are core operations in neural networks and other ML models.<span class="citation"></span></li>
-<li><strong>Transformations:</strong> Understanding linear transformations such as translation, scaling, and rotation, which are key for data preparation, feature creation, and model training.<span class="citation"></span></li>
-<li><strong>Advanced Concepts:</strong> Introduction to transpose, inverse of matrices, eigenvalues, and eigenvectors, which are critical for techniques like Principal Component Analysis (PCA) and Singular Value Decomposition (SVD).<span class="citation"></span></li>
-</ul>
-</li>
-</ul>
-<h4>Table 2: Phase 1 Weekly Breakdown</h4>
-<table>
-<thead>
-<tr>
-<th>Week</th>
-<th>Focus Area</th>
-<th>Daily Topics (Days 1-5)</th>
-<th>Weekend Project/Activity</th>
-<th>Key Resources</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>1</strong></td>
-<td><strong>Python Fundamentals & Jupyter</strong></td>
-<td>Day 1: Python syntax, data types, variables, basic I/O. Day 2: Control flow (if/else, loops), functions, modules. Day 3: Object-Oriented Programming (OOP) basics in Python. Day 4: Intro to Jupyter Notebook, Markdown, code cells, kernel. Day 5: Jupyter practice, basic Python scripts, debugging in Jupyter.</td>
-<td>Set up Anaconda/Jupyter environment. Complete "Hello World" in Jupyter. Practice basic Python problems (e.g., FizzBuzz, list manipulation).</td>
-<td>Jupyter Notebook Tutorial <span class="citation"></span>, DataCamp Intro to Python <span class="citation"></span>, Python Data Science Handbook <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>2</strong></td>
-<td><strong>NumPy & Pandas for Data Handling</strong></td>
-<td>Day 1: NumPy arrays: creation (<code class="language-plaintext highlighter-rouge">np.zeros</code>, <code class="language-plaintext highlighter-rouge">np.ones</code>, <code class="language-plaintext highlighter-rouge">np.arange</code>, <code class="language-plaintext highlighter-rouge">np.linspace</code>), attributes (<code class="language-plaintext highlighter-rouge">shape</code>, <code class="language-plaintext highlighter-rouge">ndim</code>, <code class="language-plaintext highlighter-rouge">dtype</code>). Day 2: Basic array operations (element-wise, broadcasting), indexing, slicing. Day 3: Matrix multiplication (<code class="language-plaintext highlighter-rouge">dot</code>, <code class="language-plaintext highlighter-rouge">@</code>), aggregation functions (<code class="language-plaintext highlighter-rouge">sum</code>, <code class="language-plaintext highlighter-rouge">min</code>, <code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">axis</code>). Day 4: Pandas Series & DataFrames: creation, inspection (<code class="language-plaintext highlighter-rouge">head</code>, <code class="language-plaintext highlighter-rouge">info</code>, <code class="language-plaintext highlighter-rouge">describe</code>, <code class="language-plaintext highlighter-rouge">shape</code>, <code class="language-plaintext highlighter-rouge">isnull</code>). Day 5: Data selection (<code class="language-plaintext highlighter-rouge">loc</code>, <code class="language-plaintext highlighter-rouge">iloc</code>), adding/modifying columns.</td>
-<td>Implement common linear algebra operations (vector dot product, matrix multiplication) using NumPy. Load a small dataset into Pandas, perform basic inspection.</td>
-<td>NumPy Quickstart <span class="citation"></span>, NumPy Dot Product <span class="citation"></span>, Pandas DataFrame Tutorial <span class="citation"></span>, Data Wrangling with Pandas <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td><strong>Data Cleaning, Transformation & Visualization</strong></td>
-<td>Day 1: Data Loading (CSV, Excel, JSON, SQL) and Exporting. Day 2: Data Cleaning: handling missing values (dropping, replacing), duplicate data. Day 3: Data Transformation: type casting (<code class="language-plaintext highlighter-rouge">astype</code>), creating new features (<code class="language-plaintext highlighter-rouge">apply</code>, <code class="language-plaintext highlighter-rouge">lambda</code>). Day 4: Matplotlib basics: <code class="language-plaintext highlighter-rouge">pyplot</code>, plotting lines, scatter plots, customizing plots. Day 5: Seaborn intro: <code class="language-plaintext highlighter-rouge">set_style</code>, histograms, box plots, violin plots, heatmaps, <code class="language-plaintext highlighter-rouge">pairplot</code>.</td>
-<td>Load a real-world dataset (e.g., small retail sales data <span class="citation"></span>), perform initial data cleaning and transformation. Create a comprehensive visual report on the dataset.</td>
-<td>Loading CSV/Excel/JSON with Pandas <span class="citation"></span>, Data Wrangling with Pandas <span class="citation"></span>, Matplotlib Seaborn Tutorial <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>4</strong></td>
-<td><strong>Statistics, Probability & Linear Algebra</strong></td>
-<td>Day 1: Descriptive Statistics: mean, median, mode, variance, std dev, IQR, outliers. Day 2: Probability basics: sample space, events, random variables (discrete/continuous), probability rules. Day 3: Bayes' Theorem & its application (e.g., medical diagnosis example). Day 4: Hypothesis testing: null/alt hypothesis, p-value, Z-score, t-tests. Day 5: A/B testing principles, sample size, duration, interpreting results.</td>
-<td>Analyze a dataset using descriptive statistics. Implement Bayes' Theorem for a toy problem. Conduct a simple A/B test simulation in Python, interpret results.</td>
-<td>Descriptive Statistics Python <span class="citation"></span>, Probability Theory in ML <span class="citation"></span>, Bayes Theorem Explanation <span class="citation"></span>, Hypothesis Testing Python <span class="citation"></span>, A/B Testing Project Example <span class="citation"></span>, Linear Algebra for ML <span class="citation"></span>, Z-score calculation <span class="citation"></span></td>
-</tr>
-</tbody>
-</table>
-<h2>3. Phase 2: Core Machine Learning – Supervised & Unsupervised Learning (Weeks 5-8)</h2>
-<p>Building upon the strong foundational skills, Phase 2 delves into the core paradigms of machine learning: supervised and unsupervised learning. This phase equips engineers with the ability to implement, train, and evaluate classical machine learning models, understand essential data preprocessing techniques like feature engineering, and master model tuning and validation strategies.</p>
-<h3>3.1 Introduction to Machine Learning Paradigms</h3>
-<p>A clear understanding of the fundamental differences between supervised and unsupervised learning is paramount before diving into specific algorithms.</p>
-<ul>
-<li><strong>Supervised Learning Explained:</strong> Supervised learning is a category of machine learning that utilizes labeled datasets to train algorithms. These datasets contain examples of both inputs (features) and corresponding correct outputs (labels).<span class="citation"></span> The algorithms learn the relationship between features and targets, enabling them to predict outcomes or recognize patterns on new, unseen data.<span class="citation"></span> The process involves iterative learning where the algorithm modifies its parameters to minimize errors based on the labeled training data.<span class="citation"></span>
-<ul>
-<li><strong>Classification:</strong> This type of supervised learning is used to predict categorical labels or discrete outcomes. Examples include spam detection (spam or not spam) or predicting customer churn (yes or no).<span class="citation"></span> Binary classification involves two possible outcomes, while multiclass classification handles more than two categories.<span class="citation"></span></li>
-<li><strong>Regression:</strong> In contrast, regression algorithms predict continuous values, such as housing prices, salaries, or temperature.<span class="citation"></span> The model learns the relationship between input features and a continuous target variable.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Unsupervised Learning Explained:</strong> Unsupervised learning, unlike its supervised counterpart, learns from data without explicit human supervision. It operates on raw, unlabeled data, discovering patterns, similarities, and structures inherently present within the information.<span class="citation"></span> This approach is particularly effective for complex processing tasks like organizing large datasets into clusters or identifying previously undetected anomalies.<span class="citation"></span>
-<ul>
-<li><strong>Clustering:</strong> This technique groups data points based on their similarities. Common types include exclusive clustering (each point belongs to only one cluster, e.g., K-means), overlapping clustering (points can belong to multiple clusters), hierarchical clustering (data divided into a tree-like structure), and probabilistic clustering (points grouped based on probability of belonging to a cluster).<span class="citation"></span></li>
-<li><strong>Dimensionality Reduction:</strong> This involves reducing the number of input variables while retaining important information. Techniques like Principal Component Analysis (PCA) and Singular Value Decomposition (SVD) are utilized to transform high-dimensional data into a smaller set of dimensions, simplifying analysis and improving model efficiency.<span class="citation"></span></li>
-</ul>
-</li>
-</ul>
-<h3>3.2 Data Preparation and Preprocessing for Machine Learning</h3>
-<p>The quality of data directly impacts the performance of machine learning models.<span class="citation"></span> Data wrangling, a crucial process of preparing data for analysis, ensures that the data is accurate, consistent, and in a usable format.<span class="citation"></span></p>
-<ul>
-<li><strong>Train-Test Split and Validation Sets:</strong> To ensure unbiased model evaluation, datasets are typically split into training, validation, and testing subsets.<span class="citation"></span> The training set is used to fit the model, the validation set is used for hyperparameter tuning, and the test set provides an unbiased evaluation of the final model's performance.<span class="citation"></span> The <code>train_test_split()</code> function from Scikit-learn is a standard tool for this, allowing control over <code>test_size</code>, <code>train_size</code>, <code>random_state</code> for reproducibility, and <code>stratify</code> for maintaining class distribution in imbalanced datasets.<span class="citation"></span></li>
-<li><strong>Feature Engineering:</strong> This machine learning technique involves leveraging existing data to create new variables that can enhance model accuracy and simplify data transformations.<span class="citation"></span> It is a critical step because the raw features in a dataset may not be in the most suitable format for a machine learning algorithm to learn from effectively.<span class="citation"></span> Key techniques include:
-<ul>
-<li><strong>Imputation:</strong> Handling missing values by replacing them with a specific value, the mean/median for numerical data, or the most frequent value for categorical data. This avoids losing valuable data points that might be dropped otherwise.<span class="citation"></span></li>
-<li><strong>Discretization (Binning):</strong> Grouping continuous data values into logical bins or buckets. This can prevent overfitting and simplify relationships, though it may result in some loss of granularity.<span class="citation"></span></li>
-<li><strong>Categorical Encoding:</strong> Converting categorical features into numerical values, which most machine learning models require as input.<span class="citation"></span>
-<ul>
-<li><strong>One-Hot Encoding:</strong> Creates new binary columns for each category, where a <code>1</code> indicates presence and <code>0</code> indicates absence, eliminating any false sense of ordinality.<span class="citation"></span> Pandas' <code>get_dummies()</code> and Scikit-learn's <code>OneHotEncoder</code> are commonly used.<span class="citation"></span></li>
-<li><strong>Label Encoding:</strong> Assigns a unique integer to each category. This is suitable when there is an inherent ordinal relationship between categories (e.g., "Low," "Medium," "High").<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Feature Scaling (Standardization/Normalization):</strong> Transforming features to a similar scale, which is crucial for distance-based algorithms like K-Means Clustering and PCA, as it prevents variables with larger ranges from disproportionately influencing the model.<span class="citation"></span> <code>StandardScaler</code> from Scikit-learn is a common tool for this, transforming features to have a mean of 0 and standard deviation of 1.<span class="citation"></span></li>
-</ul>
-</li>
-</ul>
-<h3>3.3 Supervised Learning Algorithms</h3>
-<p>This section explores the implementation and application of several widely used supervised learning algorithms.</p>
-<ul>
-<li><strong>Linear Regression:</strong> A fundamental regression algorithm used to model the linear relationship between a dependent variable and one or more independent variables.<span class="citation"></span> Learners will implement <code>LinearRegression()</code> from Scikit-learn, train models using the <code>fit()</code> method, make predictions with <code>predict()</code>, and access coefficients (<code>coef_</code>) and intercepts (<code>intercept_</code>).<span class="citation"></span></li>
-<li><strong>Logistic Regression:</strong> Despite its name, Logistic Regression is a powerful algorithm primarily used for binary classification tasks, predicting the probability of a binary event using a sigmoid (logistic) function.<span class="citation"></span> It serves as an excellent baseline for binary classification problems due to its simplicity and interpretability.<span class="citation"></span> The curriculum covers <code>LogisticRegression()</code> in Scikit-learn, various solvers (<code>liblinear</code>, <code>lbfgs</code>, <code>saga</code>), and strategies for multiclass classification (one-vs-rest).<span class="citation"></span></li>
-<li><strong>K-Nearest Neighbors (KNN):</strong> A non-parametric, instance-based learning algorithm that classifies a new data point by finding the 'k' closest data points (neighbors) in the training set and assigning the most common label among them.<span class="citation"></span> The choice of 'k' and distance metric (e.g., Euclidean, Manhattan) significantly impacts performance.<span class="citation"></span> KNN's "lazy learning" approach means no explicit training phase, as it stores the entire dataset for inference.<span class="citation"></span></li>
-<li><strong>Support Vector Machines (SVM):</strong> SVMs are powerful algorithms used for both classification and regression. For classification, SVM aims to find the optimal hyperplane that maximizes the margin between different classes in a multidimensional space.<span class="citation"></span> The "kernel trick" allows SVMs to efficiently perform non-linear classification by mapping data to a higher-dimensional space where it becomes linearly separable.<span class="citation"></span></li>
-<li><strong>Ensemble Methods: Random Forest & XGBoost:</strong> These advanced algorithms combine multiple simpler models to achieve higher predictive performance and robustness.
-<ul>
-<li><strong>Random Forest:</strong> An ensemble method that consists of many decision trees. Each tree is trained on a bootstrapped sample of the data, and predictions are made by averaging the predictions of individual trees (for regression) or by voting (for classification).<span class="citation"></span> This "bagging" technique significantly reduces overfitting and improves generalization compared to a single decision tree.<span class="citation"></span> Random Forests also provide insights into feature importance.<span class="citation"></span></li>
-<li><strong>XGBoost (Extreme Gradient Boosting):</strong> An optimized implementation of the Gradient Boosted Decision Trees algorithm. It builds new models to predict the errors of previous models, iteratively combining them into a strong ensemble.<span class="citation"></span> XGBoost is known for its speed and performance, offering features like <code>early_stopping_rounds</code> to prevent overfitting and <code>learning_rate</code> for fine-tuning.<span class="citation"></span></li>
-</ul>
-</li>
-</ul>
-<h3>3.4 Unsupervised Learning Algorithms</h3>
-<p>This section focuses on algorithms that uncover hidden patterns and structures in unlabeled data.</p>
-<ul>
-<li><strong>K-Means Clustering:</strong> A popular exclusive clustering algorithm that partitions data points into a user-defined number <code>K</code> of clusters.<span class="citation"></span> The algorithm iteratively assigns data points to the nearest centroid and updates the centroids based on the mean of the assigned points.<span class="citation"></span> Key parameters include <code>n_clusters</code> (number of clusters), <code>init</code> (initialization method like 'k-means++'), and <code>n_init</code> (number of runs with different centroid seeds).<span class="citation"></span> Normalizing data is critical for K-Means as it is a distance-based algorithm.<span class="citation"></span></li>
-<li><strong>DBSCAN (Density-Based Spatial Clustering of Applications with Noise):</strong> This algorithm finds core samples in regions of high density and expands clusters from them, making it effective for data with clusters of varying shapes and for identifying noise points.<span class="citation"></span> Key parameters are <code>eps</code> (maximum distance between two samples for neighborhood) and <code>min_samples</code> (minimum number of samples in a neighborhood for a point to be considered a core point).<span class="citation"></span></li>
-<li><strong>Principal Component Analysis (PCA):</strong> A widely used dimensionality reduction technique that transforms high-dimensional data into a smaller number of principal components while preserving the most important information.<span class="citation"></span> PCA identifies combinations of original features that explain the most variance in the data.<span class="citation"></span> It is often applied after standardizing the data to ensure all features are treated equally.<span class="citation"></span></li>
-</ul>
-<h3>3.5 Model Evaluation and Tuning</h3>
-<p>Evaluating model performance and fine-tuning hyperparameters are crucial steps in the machine learning workflow.</p>
-<ul>
-<li><strong>Evaluation Metrics:</strong> The choice of evaluation metrics depends on the specific model and task, the cost of different misclassifications, and whether the dataset is balanced.<span class="citation"></span>
-<ul>
-<li><strong>Classification Metrics:</strong> Accuracy (overall correct predictions), Precision (proportion of positive predictions that are actually positive), Recall (proportion of actual positives correctly identified), F1-Score (harmonic mean of precision and recall, balancing both), Log Loss, AUC (Area Under Curve), and ROC Curve (graphical representation of TPR vs. FPR).<span class="citation"></span> Understanding the trade-offs (e.g., high recall is crucial when false negatives are costly, like in disease prediction) is emphasized.<span class="citation"></span></li>
-<li><strong>Regression Metrics:</strong> Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R² (R-squared).<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Hyperparameter Tuning:</strong> Hyperparameters are parameters set <em>before</em> training a machine learning model that significantly impact its performance.<span class="citation"></span> The process of selecting the best hyperparameters is called hyperparameter tuning.<span class="citation"></span>
-<ul>
-<li><strong>Grid Search Cross-Validation (GridSearchCV):</strong> A Scikit-learn function that automates hyperparameter tuning by systematically training and evaluating a model across a predefined grid of hyperparameter combinations.<span class="citation"></span> It uses cross-validation to assess performance, helping to prevent overfitting to the validation set.<span class="citation"></span></li>
-<li><strong>Cross-Validation Techniques:</strong> Crucial for assessing model performance and preventing overfitting.<span class="citation"></span>
-<ul>
-<li><strong>K-Fold Cross-Validation:</strong> Divides the dataset into 'k' equally sized subsets (folds). The model is trained on k-1 folds and validated on the remaining fold, repeated 'k' times.<span class="citation"></span></li>
-<li><strong>Stratified K-Fold Cross-Validation:</strong> Ensures that each fold maintains the same class distribution as the entire dataset, particularly important for imbalanced datasets.<span class="citation"></span></li>
-<li><strong>Holdout Validation:</strong> A simpler method where the dataset is split into training and testing sets (e.g., 50/50 or 75/25).<span class="citation"></span></li>
-<li>Understanding the bias-variance tradeoff in choosing the number of folds is also covered.<span class="citation"></span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4>Table 3: Phase 2 Weekly Breakdown</h4>
-<table>
-<thead>
-<tr>
-<th>Week</th>
-<th>Focus Area</th>
-<th>Daily Topics (Days 1-5)</th>
-<th>Weekend Project/Activity</th>
-<th>Key Resources</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>5</strong></td>
-<td><strong>Supervised ML: Regression & Classification</strong></td>
-<td>Day 1: Linear Regression: theory, assumptions, Scikit-learn implementation (<code class="language-plaintext highlighter-rouge">LinearRegression</code>). Day 2: Model fitting, prediction, interpreting coefficients and intercept. Day 3: Logistic Regression: theory (sigmoid function), binary classification, Scikit-learn (<code class="language-plaintext highlighter-rouge">LogisticRegression</code>). Day 4: Multi-class Logistic Regression (one-vs-rest). Day 5: K-Nearest Neighbors (KNN): theory, distance metrics (Euclidean, Manhattan), K-value selection.</td>
-<td>Build a linear regression model to predict sales/prices. Build a logistic regression model for a binary classification task (e.g., customer churn). Implement KNN for a classification problem.</td>
-<td>Linear Regression Scikit-learn <span class="citation"></span>, Logistic Regression Scikit-learn <span class="citation"></span>, KNN Algorithm <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>6</strong></td>
-<td><strong>Supervised ML: SVM & Ensemble Methods</strong></td>
-<td>Day 1: Support Vector Machines (SVM): theory (hyperplane, margin, support vectors), linear classification. Day 2: Kernel trick for non-linear classification, SVM implementation in Scikit-learn. Day 3: Random Forest: theory (decision trees, bagging, feature importance), implementation (<code class="language-plaintext highlighter-rouge">RandomForestClassifier</code>/<code class="language-plaintext highlighter-rouge">Regressor</code>). Day 4: XGBoost: theory (gradient boosting, regularization), implementation (<code class="language-plaintext highlighter-rouge">XGBRegressor</code>/<code class="language-plaintext highlighter-rouge">XGBClassifier</code>). Day 5: Comparing performance of different supervised models.</td>
-<td>Implement SVM on a classification dataset. Build a Random Forest or XGBoost model for a prediction task. Compare the performance of all models learned so far.</td>
-<td>SVM Algorithm <span class="citation"></span>, Random Forest Algorithm <span class="citation"></span>, XGBoost Algorithm <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>7</strong></td>
-<td><strong>Unsupervised ML: Clustering & Dimensionality Reduction</strong></td>
-<td>Day 1: K-Means Clustering: theory (centroids, inertia), elbow method for K. Day 2: K-Means implementation in Scikit-learn (<code class="language-plaintext highlighter-rouge">KMeans</code>), data normalization for K-Means. Day 3: DBSCAN: theory (density, core points, noise), implementation in Scikit-learn (<code class="language-plaintext highlighter-rouge">DBSCAN</code>). Day 4: Principal Component Analysis (PCA): theory, explained variance, implementation in Scikit-learn (<code class="language-plaintext highlighter-rouge">PCA</code>). Day 5: Comparing clustering algorithms (K-Means vs. DBSCAN) and applying PCA for data visualization.</td>
-<td>Perform customer segmentation using K-Means or DBSCAN on a customer dataset.<span class="citation"></span> Apply PCA to a high-dimensional dataset and visualize the reduced dimensions.</td>
-<td>K-Means Clustering <span class="citation"></span>, DBSCAN Clustering <span class="citation"></span>, PCA Dimensionality Reduction <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>8</strong></td>
-<td><strong>Model Evaluation, Tuning & Best Practices</strong></td>
-<td>Day 1: Classification metrics: Accuracy, Precision, Recall, F1-Score, Confusion Matrix. Day 2: ROC Curve, AUC, Log Loss. Day 3: Regression metrics: MAE, MSE, RMSE, R². Day 4: Hyperparameter tuning with GridSearchCV: concept, parameter grid, cross-validation integration. Day 5: Cross-validation techniques: K-Fold, Stratified K-Fold, Holdout validation, bias-variance tradeoff.</td>
-<td>Evaluate all previously built models using appropriate metrics. Perform hyperparameter tuning using GridSearchCV and cross-validation for at least one model. Document findings and model selection rationale.</td>
-<td>Evaluation Metrics <span class="citation"></span>, GridSearchCV <span class="citation"></span>, Cross-Validation <span class="citation"></span></td>
-</tr>
-</tbody>
-</table>
-<h2>4. Phase 3: Deep Learning Fundamentals & Computer Vision (Weeks 9-12)</h2>
-<p>Phase 3 marks a transition into the more advanced realm of deep learning, with a specific focus on Computer Vision. This segment provides a deep dive into neural network architectures, particularly Convolutional Neural Networks (CNNs), and equips engineers with the practical skills to build, train, and deploy models for image classification and related tasks. The curriculum emphasizes the engineering tricks for training and fine-tuning these networks, which is critical for real-world applications.<span class="citation"></span></p>
-<h3>4.1 Introduction to Deep Learning</h3>
-<p>Deep learning, a subset of machine learning, utilizes neural networks with multiple layers (deep neural networks) to learn complex patterns from data. This section introduces the fundamental concepts that differentiate deep learning from traditional machine learning.</p>
-<ul>
-<li><strong>Neural Network Fundamentals:</strong> A high-level overview of artificial neural networks, including neurons, layers (input, hidden, output), activation functions, and the concept of forward and backward propagation (backpropagation) for learning parameters.<span class="citation"></span> The focus is on building an intuitive understanding of how these networks learn.</li>
-<li><strong>Deep Learning Frameworks (TensorFlow/Keras):</strong> Introduction to TensorFlow and Keras, which are industry-standard frameworks for building and training deep learning models. Keras, in particular, is highlighted for its user-friendly API, focusing on debugging speed, code elegance, and conciseness, making it accessible for rapid prototyping and development.<span class="citation"></span> The multi-backend approach of Keras (JAX, TensorFlow, PyTorch) offers flexibility for engineers.<span class="citation"></span></li>
-</ul>
-<h3>4.2 Convolutional Neural Networks (CNNs) for Image Classification</h3>
-<p>CNNs are a class of deep learning models that have revolutionized computer vision tasks, particularly image classification, localization, and detection.<span class="citation"></span> Their ability to automatically extract meaningful spatial features from images makes them exceptionally powerful.<span class="citation"></span></p>
-<ul>
-<li><strong>CNN Architecture:</strong> A detailed exploration of the key building blocks of CNNs:
-<ul>
-<li><strong>Convolutional Layers:</strong> These layers are responsible for feature extraction. Filters (or kernels) convolve with the input images, performing pointwise multiplication and summing the results to capture relevant patterns like edges, textures, and shapes.<span class="citation"></span> The concepts of padding (e.g., 'valid' for no padding, 'same' for output size matching input size) and stride (step size of the filter) are explained.<span class="citation"></span></li>
-<li><strong>Pooling Layers:</strong> Used to reduce the spatial dimensions (width and height) of feature maps while retaining important information, thereby decreasing the number of parameters and computations, and helping to prevent overfitting.<span class="citation"></span> Types include Max Pooling (selecting the maximum element), Average Pooling (computing the average), and Global Pooling (reducing each channel to a single value).<span class="citation"></span> Pooling also contributes to translation invariance, meaning the model can recognize objects regardless of slight shifts in position.<span class="citation"></span></li>
-<li><strong>Fully Connected Layers:</strong> These layers learn complex relationships between features extracted by convolutional layers and output class probabilities or predictions.<span class="citation"></span></li>
-<li><strong>Activation Functions:</strong> Common activation functions like ReLU (Rectified Linear Unit) and Softmax (for output probabilities in classification) are introduced in the context of CNNs.</li>
-</ul>
-</li>
-<li><strong>Image Classification Project (e.g., CIFAR-10):</strong> A hands-on project to build a CNN for image classification using a standard dataset like CIFAR-10.<span class="citation"></span> This involves:
-<ul>
-<li><strong>Data Loading and Preprocessing:</strong> Loading image datasets, checking for missing values, normalizing pixel values (e.g., scaling to 0-1 range), and reshaping images to the required input format.<span class="citation"></span></li>
-<li><strong>Label Encoding (One-Hot Encoding):</strong> Converting categorical labels into a one-hot encoded format suitable for neural network training.<span class="citation"></span></li>
-<li><strong>Model Building and Training:</strong> Constructing the CNN architecture using Keras layers (<code class="language-plaintext highlighter-rouge">Conv2D</code>, <code class="language-plaintext highlighter-rouge">MaxPooling2D</code>, <code class="language-plaintext highlighter-rouge">Flatten</code>, <code class="language-plaintext highlighter-rouge">Dense</code>), compiling the model with an optimizer and loss function, and training it on the prepared dataset.<span class="citation"></span></li>
-<li><strong>Model Evaluation:</strong> Assessing the model's performance using metrics relevant to image classification (e.g., accuracy, precision, recall, confusion matrix).<span class="citation"></span></li>
-</ul>
-</li>
-</ul>
-<h3>4.3 Advanced Computer Vision Techniques</h3>
-<p>Beyond basic CNNs, this section introduces techniques to enhance model performance and efficiency, particularly when dealing with limited data.</p>
-<ul>
-<li><strong>Data Augmentation:</strong> A crucial technique to artificially expand the size and diversity of training datasets by applying various transformations to existing data.<span class="citation"></span> This is particularly useful for preventing overfitting, improving model accuracy, and reducing the operational cost of labeling new data, especially when initial datasets are small or imbalanced.<span class="citation"></span> Techniques include:
-<ul>
-<li><strong>Geometric Transformations:</strong> Randomly flipping, cropping, rotating, stretching, and zooming images.<span class="citation"></span></li>
-<li><strong>Color Space Transformations:</strong> Adjusting brightness, contrast, and color channels.<span class="citation"></span></li>
-<li><strong>Random Erasing/Noise Injection:</strong> Deleting parts of an image or adding noise.<span class="citation"></span></li>
-<li>Implementation using <code>tf.image</code> module in TensorFlow and <code>keras.layers.preprocessing</code> in Keras is covered.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Transfer Learning with Pre-trained Models:</strong> This powerful technique involves using a model that has already been trained on a massive dataset (e.g., ImageNet, containing 1.2 million images across 1,000 categories) for a similar problem.<span class="citation"></span> Instead of building a model from scratch, engineers can leverage the learned weights and architecture of these pre-trained models, saving significant computational resources and development time.<span class="citation"></span>
-<ul>
-<li><strong>Feature Extraction:</strong> Using the pre-trained model as a fixed feature extractor, where the convolutional base is frozen and only a new classifier head is trained on the target dataset.<span class="citation"></span></li>
-<li><strong>Fine-tuning:</strong> Unfreezing some or all layers of the pre-trained model and retraining them with a very small learning rate on the new dataset. This allows the model to adapt its learned features to the specific nuances of the target problem.<span class="citation"></span></li>
-<li>Keras Applications provides easy access to popular pre-trained models like VGG16, ResNet, and MobileNetV2, which can be used for prediction, feature extraction, and fine-tuning.<span class="citation"></span> The importance of choosing a pre-trained model whose original training task is similar to the new problem is emphasized to ensure effective knowledge transfer.<span class="citation"></span></li>
-</ul>
-</li>
-</ul>
-<h4>Table 4: Phase 3 Weekly Breakdown</h4>
-<table>
-<thead>
-<tr>
-<th>Week</th>
-<th>Focus Area</th>
-<th>Daily Topics (Days 1-5)</th>
-<th>Weekend Project/Activity</th>
-<th>Key Resources</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>9</strong></td>
-<td><strong>Deep Learning Fundamentals & Keras/TensorFlow</strong></td>
-<td>Day 1: Neural Networks: Perceptrons, Multi-layer Perceptrons (MLP), activation functions (ReLU, Sigmoid, Softmax). Day 2: Forward and Backward Propagation (Backpropagation) intuition. Day 3: Introduction to TensorFlow and Keras: core concepts, <code class="language-plaintext highlighter-rouge">Sequential</code> model. Day 4: Building simple classification models in Keras, compiling (optimizer, loss function), training (<code class="language-plaintext highlighter-rouge">fit</code>). Day 5: Overfitting, underfitting, and basic regularization (L1/L2, Dropout).</td>
-<td>Build and train a simple neural network for a classification task (e.g., MNIST handwritten digits). Experiment with different activation functions and optimizers.</td>
-<td>Deep Learning Prerequisites <span class="citation"></span>, Keras Official Docs <span class="citation"></span>, CS231n Notes <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>10</strong></td>
-<td><strong>Convolutional Neural Networks (CNN) Architecture</strong></td>
-<td>Day 1: Introduction to CNNs: why they excel at images, comparison to MLPs for images. Day 2: Convolutional layers: filters/kernels, feature maps, padding ('valid', 'same'), stride. Day 3: Pooling layers: Max Pooling, Average Pooling, Global Pooling, dimensionality reduction, translation invariance. Day 4: Building a basic CNN in Keras (<code class="language-plaintext highlighter-rouge">Conv2D</code>, <code class="language-plaintext highlighter-rouge">MaxPooling2D</code>, <code class="language-plaintext highlighter-rouge">Flatten</code>, <code class="language-plaintext highlighter-rouge">Dense</code>). Day 5: Understanding CNN parameters, receptive fields, and computational cost.</td>
-<td>Implement a small CNN from scratch to classify a simple image dataset (e.g., Fashion MNIST). Visualize feature maps from early layers.</td>
-<td>CNN Architecture <span class="citation"></span>, Keras CNN Layers <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>11</strong></td>
-<td><strong>Image Classification Project & Data Augmentation</strong></td>
-<td>Day 1: CIFAR-10 dataset: loading, exploration, visualization, class distribution. Day 2: Data preprocessing for CIFAR-10 (normalization, reshaping, one-hot encoding). Day 3: Designing a CNN architecture for CIFAR-10, model compilation and training. Day 4: Data Augmentation: why it's important (preventing overfitting, increasing diversity), geometric transformations (flips, rotations, crops, zooms). Day 5: Color space transformations (brightness, contrast), implementing augmentation with Keras <code class="language-plaintext highlighter-rouge">ImageDataGenerator</code> or <code class="language-plaintext highlighter-rouge">tf.image</code>.</td>
-<td>Complete the CIFAR-10 image classification project. Apply various data augmentation techniques to the CIFAR-10 dataset and observe the impact on model accuracy and generalization.</td>
-<td>Build CNN on CIFAR-10 <span class="citation"></span>, Data Augmentation Computer Vision <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>12</strong></td>
-<td><strong>Transfer Learning & Advanced Computer Vision</strong></td>
-<td>Day 1: Introduction to Transfer Learning: concept, benefits, using pre-trained models (ImageNet, VGG, ResNet, MobileNet). Day 2: Feature Extraction: using pre-trained models as fixed feature extractors in Keras. Day 3: Fine-tuning pre-trained models: unfreezing layers, setting learning rates. Day 4: Object Detection basics (e.g., YOLOv8 overview), Segmentation concepts. Day 5: Choosing the right pre-trained model for a task, ethical considerations in computer vision (bias in datasets).</td>
-<td>Utilize a pre-trained model (e.g., MobileNetV2 <span class="citation"></span>) for a new image classification task (e.g., Plant Disease Classifier <span class="citation"></span>), comparing feature extraction vs. fine-tuning. Explore resources on object detection.</td>
-<td>Transfer Learning <span class="citation"></span>, Image Classification Project <span class="citation"></span>, Keras Applications <span class="citation"></span></td>
-</tr>
-</tbody>
-</table>
-<h2>5. Phase 4: Natural Language Processing (NLP) & Transformers (Weeks 13-16)</h2>
-<p>The fourth phase shifts focus to Natural Language Processing (NLP), starting with foundational text processing techniques and progressing to the revolutionary Transformer architecture. This phase provides engineers with the skills to understand, process, and generate human language, laying the groundwork for advanced LLM applications.</p>
-<h3>5.1 Natural Language Processing (NLP) Fundamentals</h3>
-<p>Understanding how text data is processed and represented is fundamental to working with LLMs.</p>
-<ul>
-<li><strong>Text Preprocessing:</strong> Raw text data is often noisy and requires significant cleaning and normalization before it can be effectively used by models.<span class="citation"></span> Key techniques covered include:
-<ul>
-<li><strong>Tokenization:</strong> Breaking down text into smaller units (tokens), such as words or sentences.<span class="citation"></span> Word-level, sentence-level, and subword tokenization (used in transformer models) are explored.<span class="citation"></span></li>
-<li><strong>Stopword Removal:</strong> Eliminating common words (e.g., "the," "a") that often add little semantic meaning.<span class="citation"></span></li>
-<li><strong>Stemming and Lemmatization:</strong> Reducing words to their base or root form. Stemming is a heuristic process of removing prefixes/suffixes, while lemmatization considers grammatical aspects to transform words into their dictionary form.<span class="citation"></span></li>
-<li><strong>Part-of-Speech (POS) Tagging and Named Entity Recognition (NER):</strong> Identifying the grammatical role of words and extracting named entities (e.g., persons, organizations, locations).<span class="citation"></span></li>
-<li>Practical implementation uses popular Python libraries such as NLTK and SpaCy, which provide comprehensive tools for these tasks.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Text Vectorization:</strong> Machine learning models require numerical input, so text data must be converted into a numerical form.<span class="citation"></span>
-<ul>
-<li><strong>CountVectorizer:</strong> Creates a matrix of token counts, where each row represents a document and each column a unique word, indicating word frequency.<span class="citation"></span></li>
-<li><strong>TF-IDF Vectorizer (Term Frequency-Inverse Document Frequency):</strong> An extension of CountVectorizer that considers the importance of words across all documents, giving more weight to words that are frequent in a single document but rare across the entire corpus.<span class="citation"></span> This helps distinguish meaningful terms from common words.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Word Embeddings:</strong> Representing words as dense vectors in a continuous space, capturing semantic relationships and language nuances.<span class="citation"></span>
-<ul>
-<li><strong>Word2Vec:</strong> Uses neural networks to learn word embeddings by predicting context words given a target word (Skip-gram) or vice-versa (CBOW).<span class="citation"></span></li>
-<li><strong>GloVe (Global Vectors for Word Representation):</strong> A count-based model that leverages global word co-occurrence statistics to generate embeddings, aiming to capture both syntactic and semantic relationships.<span class="citation"></span></li>
-<li>The curriculum emphasizes the availability and utility of pre-trained Word2Vec and GloVe embeddings as a starting point for many NLP tasks, saving significant training time and resources.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Text Classification:</strong> Applying machine learning algorithms to categorize text data.
-<ul>
-<li><strong>Naive Bayes vs. SVM for Text Classification:</strong> A comparative study of these two common algorithms for text classification. Naive Bayes is probabilistic, simple, computationally efficient, and works well with high-dimensional text data, despite its "naive" independence assumption.<span class="citation"></span> SVM, on the other hand, aims to find an optimal hyperplane for separation and can handle non-linear relationships via the kernel trick, often achieving high accuracy on text classification tasks, especially with sufficient data.<span class="citation"></span> The choice between them often depends on dataset size and computational resources.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Text Summarization:</strong> The process of creating concise summaries from large volumes of text while preserving essential information.<span class="citation"></span>
-<ul>
-<li><strong>Extractive Summarization:</strong> Extracts key sentences or phrases directly from the original document based on their relevance.<span class="citation"></span> Algorithms like TextRank are used for this.<span class="citation"></span></li>
-<li><strong>Abstractive Summarization:</strong> Generates entirely new sentences to convey key ideas, often rephrasing information in a more coherent manner. This approach has gained prominence with Transformer models.<span class="citation"></span></li>
-</ul>
-</li>
-</ul>
-<h3>5.2 Recurrent Neural Networks (RNNs) & Transformers</h3>
-<p>This section introduces sequence models, leading into the pivotal Transformer architecture that underpins modern LLMs.</p>
-<ul>
-<li><strong>Recurrent Neural Networks (RNNs):</strong> Understanding the basic concept of RNNs for sequential data processing, their limitations (vanishing/exploding gradients), and the evolution to more advanced architectures.</li>
-<li><strong>LSTMs and GRUs:</strong> Deep dive into Long Short-Term Memory (LSTM) networks and Gated Recurrent Units (GRUs), which address the vanishing gradient problem in RNNs and are effective for capturing long-range dependencies in sequential data.</li>
-<li><strong>Transformer Architecture:</strong> Introduction to the groundbreaking Transformer architecture, which revolutionized NLP by replacing recurrence with attention mechanisms.</li>
-<li><strong>Self-Attention and Positional Encoding:</strong> Detailed explanation of the core components of Transformers: self-attention (how it allows the model to weigh the importance of different words in a sequence) and positional encoding (how it incorporates word order information).</li>
-<li><strong>BERT vs. GPT:</strong> A comparative overview of two prominent Transformer-based models: BERT (Bidirectional Encoder Representations from Transformers) for understanding context and GPT (Generative Pre-trained Transformer) for text generation.</li>
-</ul>
-<h4>Table 5: Phase 4 Weekly Breakdown</h4>
-<table>
-<thead>
-<tr>
-<th>Week</th>
-<th>Focus Area</th>
-<th>Daily Topics (Days 1-5)</th>
-<th>Weekend Project/Activity</th>
-<th>Key Resources</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>13</strong></td>
-<td><strong>NLP Text Preprocessing & Vectorization</strong></td>
-<td>Day 1: Text preprocessing: cleaning raw text, tokenization (word, sentence, subword) using NLTK and SpaCy. Day 2: Stopword removal, stemming vs. lemmatization, POS tagging, Named Entity Recognition (NER). Day 3: Text vectorization: CountVectorizer theory and implementation. Day 4: TF-IDF Vectorizer theory and implementation, comparison of CountVectorizer vs. TF-IDF. Day 5: Practical text preprocessing pipeline on a real dataset.</td>
-<td>Preprocess and vectorize a text dataset (e.g., news articles <span class="citation"></span>), build a simple text classifier using CountVectorizer/TF-IDF and a classical ML model (e.g., Logistic Regression).</td>
-<td>Text Preprocessing <span class="citation"></span>, NLTK Official Docs <span class="citation"></span>, SpaCy Official Docs <span class="citation"></span>, CountVectorizer TF-IDF <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>14</strong></td>
-<td><strong>Word Embeddings & Text Classification</strong></td>
-<td>Day 1: Word Embeddings: why they are important, concept of dense vectors. Day 2: Word2Vec (Skip-gram, CBOW) theory and intuition. Day 3: GloVe (Global Vectors for Word Representation) theory, using pre-trained Word2Vec/GloVe embeddings. Day 4: Text classification with Naive Bayes: theory, implementation (<code class="language-plaintext highlighter-rouge">MultinomialNB</code>). Day 5: Text classification with SVM: theory, implementation (<code class="language-plaintext highlighter-rouge">SVC</code>), comparison of Naive Bayes vs. SVM for text.</td>
-<td>Implement word embeddings (Word2Vec/GloVe) on a text corpus. Build a text classifier using Naive Bayes and SVM, compare their performance on a text classification dataset.</td>
-<td>Word2Vec GloVe Embeddings <span class="citation"></span>, Text Classification Naive Bayes SVM <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>15</strong></td>
-<td><strong>Recurrent Neural Networks (RNNs) & Sequence Models</strong></td>
-<td>Day 1: Introduction to RNNs: architecture, handling sequential data, limitations (vanishing/exploding gradients). Day 2: Long Short-Term Memory (LSTM) networks: cell state, gates (forget, input, output). Day 3: Gated Recurrent Units (GRUs): simplified architecture compared to LSTMs. Day 4: Building RNN, LSTM, and GRU models in Keras for sequence classification (e.g., sentiment analysis). Day 5: Sequence generation basics with RNNs.</td>
-<td>Build an LSTM or GRU model for a sentiment classification task (e.g., movie reviews). Experiment with different network depths and parameters.</td>
-<td>RNN/LSTM/GRU Tutorials (General Deep Learning Resources) <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>16</strong></td>
-<td><strong>Transformer Architecture & LLM Introduction</strong></td>
-<td>Day 1: Introduction to Transformer architecture: "Attention is All You Need" paper overview. Day 2: Self-attention mechanism: query, key, value, scaled dot-product attention. Day 3: Positional Encoding: how Transformers handle sequence order. Day 4: Encoder-Decoder architecture of Transformers. Day 5: Introduction to BERT (Encoder-only) and GPT (Decoder-only) models, their core differences and applications.</td>
-<td>Read "Attention is All You Need" paper (or a comprehensive summary). Explore Hugging Face Transformers library for pre-trained BERT/GPT models.</td>
-<td>Attention is All You Need (Paper) (External Resource), Hugging Face Transformers (External Resource), Keras Applications <span class="citation"></span></td>
-</tr>
-</tbody>
-</table>
-<h2>6. Phase 5: Large Language Models (LLMs) & Agent Design (Weeks 17-20)</h2>
-<p>This phase dives deep into Large Language Models (LLMs), covering practical aspects of interacting with them, designing intelligent agents, and advanced techniques like Retrieval-Augmented Generation (RAG) and fine-tuning.</p>
-<h3>6.1 Large Language Models (LLMs)</h3>
-<p>This section delves into the architecture, capabilities, and practical applications of LLMs, the current frontier of AI.</p>
-<ul>
-<li><strong>Introduction to LLMs:</strong> Understanding what LLMs are, how they are trained on vast amounts of text data, and their emergent capabilities in natural language understanding and generation. The curriculum highlights the rapid advancements in LLMs, such as OpenAI's GPT-4 Turbo with its significantly larger context windows (128k tokens, equivalent to ~300 pages of text) and reduced pricing, making them more accessible for robust applications.<span class="citation"></span></li>
-<li><strong>LLM APIs and Tool Calling:</strong> LLMs, by themselves, output tokens and cannot directly execute code or interact with external systems.<span class="citation"></span> This unit focuses on how LLMs interact with the real world through APIs and "tool calling" mechanisms.
-<ul>
-<li><strong>JSON Output Control:</strong> Techniques for guiding LLMs to produce structured JSON outputs, including using <code class="language-plaintext highlighter-rouge">response_format={"type": "json_object"}</code> in API calls and providing detailed JSON schemas or "mock" functions with descriptions to guide the model.<span class="citation"></span></li>
-<li><strong>Function Calling/Tool Use:</strong> Passing optional functions to the LLM, allowing it to generate a JSON object containing arguments necessary to invoke these functions. This enables LLMs to perform actions beyond text generation, such as interacting with databases, external APIs, or custom tools.<span class="citation"></span> OpenAI's Assistants API, for example, includes features like a Code Interpreter and improved function calling.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>LLM Evaluation and Alignment:</strong> Ensuring LLMs produce consistent, reliable, and ethically sound outputs is critical.
-<ul>
-<li><strong>LLM-as-a-Judge:</strong> A powerful evaluation technique that leverages LLMs themselves to assess the quality, relevance, and reliability of outputs generated by other LLMs.<span class="citation"></span> This addresses the challenge of evaluating open-ended, subjective tasks at scale, aligning with human judgment.<span class="citation"></span> It involves crafting evaluation prompts, providing original queries and AI-generated outputs, and optionally references, for the judge LLM to assign scores or detailed feedback.<span class="citation"></span> Best practices for standardized benchmarking, creating diverse test datasets, and regular evaluation are emphasized.<span class="citation"></span></li>
-<li><strong>Reinforcement Learning from Human Feedback (RLHF):</strong> A machine learning technique that optimizes LLMs to align more closely with human goals, wants, and needs by incorporating human feedback into the reward function.<span class="citation"></span> This typically involves pre-training a base model, supervised fine-tuning (SFT) with human-labeled examples to prime the model for desired response formats, building a separate reward model based on human preferences, and then optimizing the language model using this reward model.<span class="citation"></span> RLHF is crucial for "unlocking" capabilities in pre-trained models that are difficult to elicit through prompt engineering alone.<span class="citation"></span></li>
-<li><strong>Continuous Learning for LLMs:</strong> The ability for LLMs to learn and adapt incrementally over time without forgetting previously acquired knowledge is vital in dynamic environments where data and requirements constantly evolve.<span class="citation"></span> Techniques like regularization-based methods, rehearsal methods (replaying old data), parameter isolation, and memory-augmented approaches are explored to mitigate "catastrophic forgetting".<span class="citation"></span></li>
-</ul>
-</li>
-</ul>
-<h3>6.2 AI Agent Design and Multi-Agent Systems</h3>
-<p>This section explores the emerging field of AI agents, which leverage LLMs to reason and interact with their environment.</p>
-<ul>
-<li><strong>Introduction to AI Agents:</strong> Understanding the concept of autonomous AI agents that can perceive, reason, act, and communicate. LLMs provide agents with the ability to reason and generate human-like language.<span class="citation"></span></li>
-<li><strong>Agent-to-Agent Communication:</strong> In multi-agent systems, where multiple AI agents collaborate, effective communication is paramount. This unit covers how agents communicate, often using natural human language, to share information, express intention, coordinate tasks, and negotiate resources.<span class="citation"></span> The need for standardized protocols (like KQML, FIPA-ACL, or emerging open protocols like Agent2Agent) to enable seamless, vendor-agnostic interoperability and collaboration is highlighted.<span class="citation"></span> This allows for dynamic, multi-agent ecosystems where systems can delegate tasks, share knowledge, and cooperate in real time.<span class="citation"></span></li>
-<li><strong>Ethical Considerations in AI Agents (e.g., Mental Health Chatbots):</strong> Given the increasing deployment of AI agents in sensitive domains, ethical implications are critically examined. For instance, in mental health chatbots, concerns arise around client confidentiality (data privacy, HIPAA/GDPR compliance, optional data use), algorithmic bias (due to unrepresentative training data leading to misdiagnosis), misinterpretation of user queries, and the lack of human empathy or judgment.<span class="citation"></span> The curriculum stresses the importance of transparency, diverse datasets, regular auditing, human oversight, and clear ethical guidelines for responsible development and deployment.<span class="citation"></span></li>
-</ul>
-<h4>Table 6: Phase 5 Weekly Breakdown</h4>
-<table>
-<thead>
-<tr>
-<th>Week</th>
-<th>Focus Area</th>
-<th>Daily Topics (Days 1-5)</th>
-<th>Weekend Project/Activity</th>
-<th>Key Resources</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>17</strong></td>
-<td><strong>Prompt Engineering & OpenAI API</strong></td>
-<td>Day 1: Prompting principles: Zero-shot, Few-shot, Chain-of-Thought, Role-playing. Day 2: OpenAI Completion & Chat API: basic usage, <code class="language-plaintext highlighter-rouge">temperature</code>, <code class="language-plaintext highlighter-rouge">top_p</code>, <code class="language-plaintext highlighter-rouge">token_limits</code>. Day 3: Structured output: guiding LLMs to produce JSON, using <code class="language-plaintext highlighter-rouge">response_format={"type": "json_object"}</code>. Day 4: Tool use/Function Calling: concept, defining tools, LLM generating function arguments. Day 5: System prompts, user prompts, assistant prompts, ethical considerations in prompting (bias, safety).</td>
-<td>Experiment with an LLM API (e.g., OpenAI API) for structured JSON output and basic function calling. Build a simple chatbot that uses a tool to answer a specific query.</td>
-<td>LLM Tool Calling JSON Output <span class="citation"></span>, OpenAI DevDay Keynotes <span class="citation"></span>, LangChain Tools <span class="citation"></span></td>
-</tr>
-<tr>
-<td><strong>18</strong></td>
-<td><strong>LangChain, LangGraph & Agents</strong></td>
-<td>Day 1: LangChain basics: chains, prompt templates, output parsers. Day 2: LangChain components: LLMs, ChatModels, Embeddings, Document Loaders. Day 3: Introduction to LangGraph: nodes, edges, state graph. Day 4: Building multi-agent orchestration with LangGraph, human-in-the-loop concepts. Day 5: State management in agents, streaming responses, agent handoff.</td>
-<td>Build a simple research assistant agent using LangChain/LangGraph that can perform a multi-step task (e.g., search, summarize).</td>
-<td>LangChain (External Resource), LangGraph (External Resource)</td>
-</tr>
-<tr>
-<td><strong>19</strong></td>
-<td><strong>Vector Databases & Retrieval-Augmented Generation (RAG)</strong></td>
-<td>Day 1: Introduction to Vector Databases: why they are needed for LLMs, concepts of embeddings. Day 2: Popular Vector DBs: ChromaDB, FAISS, Pinecone (overview). Day 3: Embeddings: OpenAI embeddings, HuggingFace embeddings, generating and storing embeddings. Day 4: Retrieval-Augmented Generation (RAG): concept, benefits, basic RAG implementation. Day 5: Advanced RAG techniques: Hybrid retrievers (BM25 + Dense), MultiVector & MultiQuery routing, RAG vs. Agentic RAG.</td>
-<td>Build a PDF chatbot with citations using RAG and a vector database (e.g., ChromaDB). Test its ability to answer questions based on provided documents.</td>
-<td>RAG Deep Dive (External Resource), ChromaDB (External Resource), FAISS (External Resource)</td>
-</tr>
-<tr>
-<td><strong>20</strong></td>
-<td><strong>LLM Fine-tuning, Quantization & PEFT</strong></td>
-<td>Day 1: Fine-tuning methods: LoRA (Low-Rank Adaptation), QLoRA, full fine-tuning. Day 2: Quantization: int8, 4-bit quantization for efficiency. Day 3: Parameter-Efficient Fine-Tuning (PEFT) via HuggingFace <code class="language-plaintext highlighter-rouge">peft</code> library. Day 4: Using Unsloth for fast fine-tuning. Day 5: Retrieval-Augmented Fine-tuning (RAFT) concept, ethical considerations in fine-tuning (bias propagation).</td>
-<td>Finetune a small open-source LLM (e.g., LLaMA2) with a domain-specific dataset using LoRA/QLoRA and HuggingFace PEFT/Unsloth. Evaluate the fine-tuned model's performance.</td>
-<td>Hugging Face PEFT (External Resource), Unsloth.ai (External Resource)</td>
-</tr>
-</tbody>
-</table>
-<h2>7. Phase 6: Full-Stack AI Development, MLOps & Capstones (Weeks 21-24)</h2>
-<p>The final phase integrates all learned concepts into the practical aspects of building and deploying end-to-end AI applications. It covers backend API development, UI creation, MLOps principles, and advanced AI systems, culminating in comprehensive capstone projects.</p>
-<h3>7.1 Full-Stack AI Development & Deployment</h3>
-<p>This concluding section integrates all learned concepts into the practical aspects of building and deploying end-to-end AI applications.</p>
-<ul>
-<li><strong>Hybrid ML/LLM Systems:</strong> Many real-world applications benefit from combining traditional machine learning models with LLMs.<span class="citation"></span> This hybrid approach leverages LLMs to process messy, unstructured text (extracting meaning, summarizing, tagging) and then feeds this structured output to traditional ML models for predictions, classifications, or risk flagging.<span class="citation"></span> This allows for higher predictive accuracy, greater robustness across diverse data types, and improved interpretability by balancing the complex reasoning of LLMs with the transparency of traditional ML models.<span class="citation"></span></li>
-<li><strong>Deployment and MLOps Principles:</strong> Transitioning ML models from development to production is a critical engineering challenge.<span class="citation"></span> This unit introduces MLOps (Machine Learning Operations) principles, which streamline machine learning workflows and ensure reliability in production.<span class="citation"></span>
-<ul>
-<li><strong>CI/CD for ML:</strong> Continuous Integration/Continuous Deployment practices adapted for machine learning models, ensuring automated testing, integration, and deployment of code and models.<span class="citation"></span></li>
-<li><strong>Containerization (Docker) and Orchestration (Kubernetes):</strong> Using Docker to package models and their dependencies into portable containers, and Kubernetes for orchestrating and managing these containers at scale.<span class="citation"></span></li>
-<li><strong>Cloud Deployment:</strong> Deploying models on cloud platforms (AWS, GCP, Azure), understanding cloud services for AI/ML.<span class="citation"></span></li>
-<li><strong>Monitoring and Maintenance:</strong> Continuous monitoring of deployed models for performance degradation, data drift, and bias, along with strategies for model retraining and updates.<span class="citation"></span></li>
-</ul>
-</li>
-<li><strong>Building a Portfolio Project:</strong> The culmination of the curriculum is a comprehensive full-stack AI project that integrates concepts from all phases. This project will serve as a tangible demonstration of acquired skills for career growth.<span class="citation"></span> The project should involve:
-<ul>
-<li><strong>Problem Definition:</strong> Identifying a real-world problem that can be solved with AI/ML/LLM.</li>
-<li><strong>Data Acquisition & Preprocessing:</strong> Sourcing and preparing data, including complex data wrangling and feature engineering.</li>
-<li><strong>Model Selection & Training:</strong> Choosing appropriate ML/DL/LLM models, training, and fine-tuning them.</li>
-<li><strong>Evaluation & Iteration:</strong> Rigorously evaluating model performance and iteratively improving it.</li>
-<li><strong>Deployment:</strong> Building a basic web application or API endpoint to expose the model's functionality.</li>
-<li><strong>Documentation:</strong> Creating professional documentation for the project, including code, methodology, and results.</li>
-</ul>
-</li>
-</ul>
-<h4>Table 7: Phase 6 Weekly Breakdown</h4>
-<table>
-<thead>
-<tr>
-<th>Week</th>
-<th>Focus Area</th>
-<th>Daily Topics (Days 1-5)</th>
-<th>Weekend Project/Activity</th>
-<th>Key Resources</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>21</strong></td>
-<td><strong>Backend APIs for AI Applications</strong></td>
-<td>Day 1: FastAPI basics: introduction, routing, request/response models. Day 2: CRUD operations with FastAPI. Day 3: Dependency Injection, middleware, authentication basics. Day 4: Database integration with SQLModel and SQLite. Day 5: CORS, Swagger UI for API documentation, error handling.</td>
-<td>Build a FastAPI backend for a simple AI model (e.g., a text classifier or a regression model). Implement CRUD operations and basic authentication.</td>
-<td>FastAPI Docs (External Resource), SQLModel (External Resource)</td>
-</tr>
-<tr>
-<td><strong>22</strong></td>
-<td><strong>UI Development & Deployment</strong></td>
-<td>Day 1: Streamlit basics: creating interactive web apps for ML. Day 2: Building chat UIs with Streamlit, managing session states. Day 3: File uploads, integrating Streamlit with a backend API. Day 4: Docker basics: containerization of Streamlit and FastAPI applications. Day 5: Docker Compose for multi-service applications, Streamlit Sharing deployment.</td>
-<td>Build a Streamlit UI for the FastAPI backend developed in Week 21. Dockerize both the frontend and backend, and deploy locally using Docker Compose.</td>
-<td>Streamlit Docs (External Resource), Docker Docs (External Resource)</td>
-</tr>
-<tr>
-<td><strong>23</strong></td>
-<td><strong>MLOps & Observability</strong></td>
-<td>Day 1: MLOps principles: CI/CD for ML, versioning models and data. Day 2: MLFlow for experiment tracking, model registry. Day 3: Caching strategies: Redis for response caching, prompt caching with LangChain. Day 4: LLM evaluation metrics (BLEU, ROUGE, RAGAS), PII masking, output validation. Day 5: Kubernetes (K8s) with Minikube for local orchestration, GitHub Actions for CI/CD.</td>
-<td>Set up MLFlow to track experiments for a previous project. Implement caching for an LLM application. Explore CI/CD pipeline for a simple Streamlit + FastAPI app.</td>
-<td>MLOps Best Practices <span class="citation"></span>, MLFlow (External Resource), Redis (External Resource), Kubernetes (External Resource), GitHub Actions (External Resource)</td>
-</tr>
-<tr>
-<td><strong>24</strong></td>
-<td><strong>Capstone Projects & Advanced Systems</strong></td>
-<td>Day 1: Advanced AI Architectures: Tool calling (review), Agent-to-Agent (A2A) communication, Judge LLM. Day 2: Feedback loops, RLHF (review), Continuous Learning for LLMs. Day 3: Hybrid ML + LLM systems: combining traditional ML with LLMs. Day 4-5: Capstone Project 1 & 2: Work on end-to-end AI applications integrating multiple learned concepts. Focus on design, implementation, testing, and deployment.</td>
-<td><strong>Capstone Project 1:</strong> Fully autonomous research assistant (Web search, memory, agent reasoning, citations). <strong>Capstone Project 2:</strong> Voice chatbot with RAG + Smart Paste (Whisper, ElevenLabs, OpenAI tools, structured output, full-stack deployment).</td>
-<td>Hybrid ML LLM Systems <span class="citation"></span>, Agent-to-Agent Communication <span class="citation"></span>, Judge LLM for AI Evaluation <span class="citation"></span>, RLHF <span class="citation"></span>, Continuous Learning LLM <span class="citation"></span>, Ethical AI <span class="citation"></span></td>
-</tr>
-</tbody>
-</table>
-<h2>8. Conclusion: The Journey to Professional ML Engineering</h2>
-<p>This comprehensive 6-month curriculum provides a meticulously structured pathway for engineers to transition from foundational understanding to professional proficiency in AI/ML and LLM development. The program's design emphasizes the critical interplay between theoretical knowledge and hands-on application, recognizing that true mastery in this rapidly evolving field is forged through practical problem-solving and continuous engagement with real-world challenges.<span class="citation"></span></p>
-<p>The curriculum systematically addresses the core competencies required for a successful Machine Learning Engineer, from mastering Python's data science ecosystem and foundational mathematics to implementing advanced deep learning architectures and cutting-edge LLM applications. The spiral learning approach ensures that complex concepts are revisited and deepened over time, reinforcing understanding and building confidence.<span class="citation"></span></p>
-<p>Beyond technical skills, the program instills a strong commitment to ethical AI development. Discussions on data privacy, algorithmic bias, transparency, and the responsible deployment of AI systems are woven throughout the curriculum, preparing engineers to build solutions that are not only effective but also equitable and trustworthy.<span class="citation"></span> The emphasis on MLOps principles and full-stack AI development ensures that participants are not just model builders but also capable of deploying, monitoring, and maintaining AI systems in production environments.<span class="citation"></span></p>
-<p>Upon completion, participants will possess a robust portfolio of projects, demonstrating their ability to tackle diverse AI/ML problems, from data wrangling and model selection to hyperparameter tuning and deployment. This practical experience, combined with a solid theoretical foundation, positions them to excel as professional Machine Learning Engineers, ready to contribute meaningfully to the advancement and application of artificial intelligence. The dynamic nature of AI demands a commitment to lifelong learning, and this curriculum provides the essential toolkit for continuous growth and adaptation in the field.<span class="citation"></span></p>
-</div>
+<body data-theme="light">
+  <!-- Navbar & Hero -->
+  <header>
+    <nav>
+      <div class="logo">AI ML Journey</div>
+      <div class="menu">
+        <a href="#about">About</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#courses">Courses</a>
+      </div>
+      <button id="theme-toggle" title="Toggle dark/light mode">🌙</button>
+    </nav>
+    <section class="hero">
+      <h1>Master AI & ML</h1>
+      <p>Hands‑on learning journey from fundamentals to expert projects.</p>
+      <a class="libutton" href="http://linkedin.com/...">Follow on LinkedIn</a>
+    </section>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About This Track <button class="copy-btn" data-target="#about">📋</button></h2>
+      <p>This 12-month journey covers fundamentals (math, Python), core ML, deep learning, NLP, CV, deployment, and real-world projects—crafted to empower aspiring AI/ML enthusiasts.</p>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline">
+      <h2>Timeline <button class="copy-btn" data-target="#timeline">📋</button></h2>
+      <div class="timeline-container">
+        <div class="timeline-item" data-date="M01 • W1 • D1">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3>Introduction to AI <button class="copy-btn" data-target=".t1">📋</button></h3>
+            <p class="t1">History, types, applications of AI.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-date="M01 • W2 • D1">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3>Python Basics <button class="copy-btn" data-target=".t2">📋</button></h3>
+            <p class="t2">Syntax, data structures, functions, libraries.</p>
+          </div>
+        </div>
+        <!-- Additional timeline items -->
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+      <h2>Courses & Modules</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <i class="fas fa-square-root-alt"></i>
+          <h3>Linear Algebra</h3>
+          <p>4 weeks of vector/matrix fundamentals.</p>
+          <button class="copy-btn" data-target=".card1">📋</button>
+        </div>
+        <div class="card">
+          <i class="fab fa-python"></i>
+          <h3>Python Programming</h3>
+          <p>6 weeks covering core syntax & libraries.</p>
+          <button class="copy-btn" data-target=".card2">📋</button>
+        </div>
+        <!-- More cards -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Theme toggle with localStorage
+    const toggle = document.getElementById('theme-toggle');
+    const root = document.body;
+    const current = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    root.setAttribute('data-theme', current);
+    toggle.textContent = current === 'dark' ? '☀️' : '🌙';
+
+    toggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', next);
+    });
+
+    // Smart copy
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.onclick = () => {
+        const sel = document.querySelector(btn.dataset.target);
+        if (!sel) return;
+        const txt = sel.innerText.trim();
+        navigator.clipboard.writeText(txt).then(() => {
+          btn.textContent = '✅';
+          setTimeout(() => btn.textContent = '📋', 800);
+        });
+      };
+    });
+  </script>
 </body>
 </html>
