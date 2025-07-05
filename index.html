@@ -3,380 +3,962 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive 6-Month AI/ML + LLM Curriculum</title>
+    <title>AI/ML Curriculum for Engineers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --gray-light: #f5f5f5;
-            --gray-medium: #e0e0e0;
-            --gray-dark: #333333;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --black: #000;
+            --white: #fff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-800: #333;
+            --transition: all 0.3s ease;
+        }
+        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--black);
             background-color: var(--white);
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 1.5rem;
         }
         
+        /* Header Styles */
         header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--gray-medium);
+            padding: 2rem 0;
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.05rem;
-        }
-        
-        h2 {
+        .logo {
             font-size: 1.8rem;
-            font-weight: 600;
-            margin: 3rem 0 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--gray-medium);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
-        h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin: 2rem 0 1rem;
+        .logo i {
+            color: var(--black);
         }
         
-        h4 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 1.5rem 0 0.75rem;
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--white) 0%, var(--gray-100) 100%);
+            position: relative;
+            overflow: hidden;
         }
         
-        p, li {
-            font-size: 1rem;
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0,0,0,0.02) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0,0,0,0.02) 0%, transparent 20%);
+            pointer-events: none;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 1rem;
-            color: var(--gray-dark);
+            letter-spacing: -0.03em;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
         }
         
-        ul, ol {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: var(--gray-800);
         }
         
         .author-info {
-            margin: 2rem 0;
-            font-size: 0.9rem;
+            background-color: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 2rem;
         }
         
+        /* Summary Section */
         .summary-box {
-            background-color: var(--gray-light);
+            background-color: var(--gray-100);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .summary-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .summary-box h3::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--black);
+        }
+        
+        /* Phase Navigation */
+        .phase-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+        
+        .phase-card {
+            background-color: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
             padding: 1.5rem;
-            border-left: 4px solid var(--black);
-            margin-bottom: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phase-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--black);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .phase-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        
+        .phase-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .phase-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .phase-card p {
+            font-size: 0.9rem;
+            color: var(--gray-800);
+        }
+        
+        /* Content Sections */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 4rem 0 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gray-200);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: var(--black);
+        }
+        
+        .subsection {
+            margin: 2rem 0;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .subsection-header {
+            padding: 1.5rem;
+            background-color: var(--gray-100);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .subsection-header h3 {
+            font-size: 1.6rem;
+            margin: 0;
+        }
+        
+        .subsection-content {
+            padding: 1.5rem;
+            display: none;
+        }
+        
+        .subsection.active .subsection-content {
+            display: block;
+        }
+        
+        .subsection h4 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border: 1px solid var(--gray-200);
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.95rem;
+            min-width: 700px;
         }
         
         th, td {
-            padding: 0.75rem 1rem;
+            padding: 1.2rem 1.5rem;
             text-align: left;
-            border: 1px solid var(--gray-medium);
+            border-bottom: 1px solid var(--gray-200);
         }
         
         th {
-            background-color: var(--gray-light);
+            background-color: var(--gray-100);
             font-weight: 600;
-        }
-        
-        tr:nth-child(even) {
-            background-color: var(--gray-light);
-        }
-        
-        a {
-            color: var(--black);
-            text-decoration: underline;
-            text-underline-offset: 0.2em;
-        }
-        
-        a:hover {
-            text-decoration: none;
-        }
-        
-        .phase-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 2rem 0;
-        }
-        
-        .phase-nav a {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--gray-light);
-            text-decoration: none;
-            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             font-size: 0.9rem;
         }
         
-        .phase-nav a:hover {
-            background-color: var(--gray-medium);
+        tbody tr {
+            transition: var(--transition);
         }
         
-        .back-to-top {
+        tbody tr:hover {
+            background-color: var(--gray-50);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
             display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--white);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: var(--gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--white);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
             margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray-200);
             font-size: 0.9rem;
-            text-decoration: none;
         }
         
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
-            h1 {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .phase-nav {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+            
+            .summary-box {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
                 font-size: 2rem;
             }
             
-            h2 {
+            .section-title {
                 font-size: 1.5rem;
             }
             
-            table {
-                font-size: 0.85rem;
-            }
-            
-            th, td {
-                padding: 0.5rem;
+            .phase-nav {
+                grid-template-columns: 1fr;
             }
         }
+        
+        /* Animation for table rows */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        tbody tr {
+            animation: fadeIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        tbody tr:nth-child(1) { animation-delay: 0.1s; }
+        tbody tr:nth-child(2) { animation-delay: 0.2s; }
+        tbody tr:nth-child(3) { animation-delay: 0.3s; }
+        tbody tr:nth-child(4) { animation-delay: 0.4s; }
+        tbody tr:nth-child(5) { animation-delay: 0.5s; }
+        tbody tr:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Comprehensive 6-Month AI/ML + LLM Curriculum</h1>
-            <p>From Beginner to Professional</p>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>AI/ML Curriculum</span>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Comprehensive 6-Month AI/ML + LLM Curriculum for Engineers</h1>
+            <p>From Beginner to Professional - A Structured Learning Path</p>
             
             <div class="author-info">
                 <p><strong>Prepared by Akhil Anilkumar, Senior AI ML Engineer, Cubet</strong></p>
-                <p>Email: <a href="mailto:akhil.anilkumar@cubettech.com">akhil.anilkumar@cubettech.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/akhilmon-anilkumar" target="_blank">linkedin.com/in/akhilmon-anilkumar</a></p>
+                <p>Email: akhil.anilkumar@cubettech.com</p>
+                <p>LinkedIn: linkedin.com/in/akhilmon-anilkumar</p>
             </div>
-        </header>
-        
+        </div>
+    </section>
+    
+    <main class="container">
         <div class="summary-box">
             <h3>Executive Summary</h3>
             <p>This report outlines a comprehensive 6-month (24-week) AI/ML and Large Language Model (LLM) professional development curriculum, meticulously designed to transform engineers from foundational learners into proficient practitioners. The program emphasizes a structured, hands-on approach, integrating theoretical knowledge with practical application across machine learning, deep learning, LLMs, agent design, deployment, and full-stack AI development.</p>
         </div>
         
+        <h2 class="section-title">Curriculum Overview</h2>
+        
         <div class="phase-nav">
-            <a href="#phase1">Phase 1: Foundations</a>
-            <a href="#phase2">Phase 2: Core ML</a>
-            <a href="#phase3">Phase 3: Deep Learning</a>
-            <a href="#phase4">Phase 4: NLP & Transformers</a>
-            <a href="#phase5">Phase 5: LLMs & Agents</a>
-            <a href="#phase6">Phase 6: Full-Stack & MLOps</a>
+            <div class="phase-card" onclick="scrollToSection('phase1')">
+                <div class="number">1</div>
+                <h4>Foundations</h4>
+                <p>Python, Data Science & Essential Math</p>
+            </div>
+            <div class="phase-card" onclick="scrollToSection('phase2')">
+                <div class="number">2</div>
+                <h4>Core ML</h4>
+                <p>Supervised & Unsupervised Learning</p>
+            </div>
+            <div class="phase-card" onclick="scrollToSection('phase3')">
+                <div class="number">3</div>
+                <h4>Deep Learning</h4>
+                <p>Fundamentals & Computer Vision</p>
+            </div>
+            <div class="phase-card" onclick="scrollToSection('phase4')">
+                <div class="number">4</div>
+                <h4>NLP & Transformers</h4>
+                <p>Natural Language Processing</p>
+            </div>
+            <div class="phase-card" onclick="scrollToSection('phase5')">
+                <div class="number">5</div>
+                <h4>LLMs & Agents</h4>
+                <p>Large Language Models & Agent Design</p>
+            </div>
+            <div class="phase-card" onclick="scrollToSection('phase6')">
+                <div class="number">6</div>
+                <h4>Full-Stack & MLOps</h4>
+                <p>Deployment, MLOps & Capstones</p>
+            </div>
         </div>
         
-        <h2>1. Introduction: Charting Your Path to AI/ML Professionalism</h2>
-        <h3>1.1 Program Vision: From Novice to Expert Engineer in AI/ML & LLMs</h3>
-        <p>This curriculum is engineered to bridge the gap between theoretical understanding and practical application in the rapidly evolving fields of Artificial Intelligence (AI) and Machine Learning (ML), with a specialized focus on Large Language Models (LLMs).</p>
+        <section id="phase1">
+            <h2 class="section-title">Phase 1: Foundations - Python, Data Science & Essential Math</h2>
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Core Focus Areas</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <p>Establish the indispensable bedrock for any aspiring AI/ML engineer. Build proficiency in Python programming, data manipulation, visualization, and core mathematical concepts.</p>
+                    
+                    <h4>Key Learning Outcomes</h4>
+                    <ul>
+                        <li>Proficiency in Python for data manipulation and visualization</li>
+                        <li>Foundational understanding of statistics, probability, and linear algebra</li>
+                        <li>Ability to set up and work in Jupyter Notebook environment</li>
+                        <li>Skills in data cleaning and preprocessing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Weekly Breakdown</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Week</th>
+                                    <th>Focus Area</th>
+                                    <th>Daily Topics (Days 1-5)</th>
+                                    <th>Weekend Project</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Python Fundamentals & Jupyter</td>
+                                    <td>Python syntax, data types, OOP basics, Jupyter Notebook intro</td>
+                                    <td>Set up environment, complete "Hello World" in Jupyter</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>NumPy & Pandas</td>
+                                    <td>Array operations, matrix multiplication, DataFrame manipulation</td>
+                                    <td>Implement linear algebra operations, load and inspect datasets</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Data Transformation & Visualization</td>
+                                    <td>Data loading, cleaning, transformation, Matplotlib & Seaborn</td>
+                                    <td>Clean real-world dataset, create visual report</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Statistics & Linear Algebra</td>
+                                    <td>Descriptive stats, probability, hypothesis testing, linear algebra</td>
+                                    <td>Analyze dataset, implement Bayes' Theorem, A/B test simulation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <h3>1.2 Target Audience: Engineers Ready for AI Transformation</h3>
-        <p>This program is specifically tailored for engineers with a foundational understanding of programming and problem-solving, who are eager to pivot into or deepen their expertise in AI/ML.</p>
+        <section id="phase2">
+            <h2 class="section-title">Phase 2: Core Machine Learning - Supervised & Unsupervised Learning</h2>
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Core Focus Areas</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <p>Delve into the core paradigms of machine learning: supervised and unsupervised learning. Equip engineers with the ability to implement, train, and evaluate classical ML models.</p>
+                    
+                    <h4>Key Learning Outcomes</h4>
+                    <ul>
+                        <li>Ability to implement, train, and evaluate classical ML models</li>
+                        <li>Understanding of feature engineering, model tuning, and cross-validation</li>
+                        <li>Knowledge of evaluation metrics for classification and regression</li>
+                        <li>Skills in data preprocessing for machine learning</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Weekly Breakdown</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Week</th>
+                                    <th>Focus Area</th>
+                                    <th>Daily Topics (Days 1-5)</th>
+                                    <th>Weekend Project</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Supervised ML: Regression & Classification</td>
+                                    <td>Linear Regression, Logistic Regression, K-Nearest Neighbors</td>
+                                    <td>Build regression and classification models</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Supervised ML: SVM & Ensemble</td>
+                                    <td>Support Vector Machines, Random Forest, XGBoost</td>
+                                    <td>Implement SVM and ensemble models</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Unsupervised ML: Clustering</td>
+                                    <td>K-Means Clustering, DBSCAN, PCA</td>
+                                    <td>Customer segmentation, dimensionality reduction</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Model Evaluation & Tuning</td>
+                                    <td>Classification metrics, regression metrics, GridSearchCV</td>
+                                    <td>Evaluate models, perform hyperparameter tuning</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <h3>1.3 Core Philosophy: Structured Learning, Hands-on Mastery, and Ethical AI</h3>
-        <ul>
-            <li><strong>Structured Learning Paths:</strong> This curriculum provides a meticulously planned sequence of topics, ensuring a logical progression from fundamental concepts to advanced applications.</li>
-            <li><strong>Hands-on Mastery:</strong> The curriculum heavily emphasizes hands-on projects, coding exercises, and real-world problem-solving.</li>
-            <li><strong>Ethical AI Development:</strong> Responsible AI use is a core foundation. The curriculum integrates discussions on ethical considerations, data privacy, bias, and fairness throughout the learning journey.</li>
-        </ul>
+        <section id="phase3">
+            <h2 class="section-title">Phase 3: Deep Learning Fundamentals & Computer Vision</h2>
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Core Focus Areas</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <p>Transition into the advanced realm of deep learning with a focus on Computer Vision. Gain practical skills to build, train, and deploy models for image classification.</p>
+                    
+                    <h4>Key Learning Outcomes</h4>
+                    <ul>
+                        <li>Competence in designing, training, and deploying CNNs</li>
+                        <li>Practical experience with image classification and data augmentation</li>
+                        <li>Understanding of transfer learning with pre-trained models</li>
+                        <li>Ability to work with TensorFlow/Keras frameworks</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Weekly Breakdown</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Week</th>
+                                    <th>Focus Area</th>
+                                    <th>Daily Topics (Days 1-5)</th>
+                                    <th>Weekend Project</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Deep Learning Fundamentals</td>
+                                    <td>Neural Networks, Backpropagation, TensorFlow/Keras basics</td>
+                                    <td>Build neural network for classification</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>CNN Architecture</td>
+                                    <td>Convolutional layers, pooling layers, CNN implementation</td>
+                                    <td>Implement CNN from scratch</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Image Classification</td>
+                                    <td>CIFAR-10 dataset, data preprocessing, data augmentation</td>
+                                    <td>Complete CIFAR-10 classification project</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Transfer Learning</td>
+                                    <td>Using pre-trained models, feature extraction, fine-tuning</td>
+                                    <td>Utilize MobileNetV2 for new classification task</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <h3>1.4 Navigating the Curriculum: A Spiral Learning Approach</h3>
-        <p>The curriculum adopts a spiral learning approach, where foundational concepts are introduced early and then revisited with increasing complexity and depth across different phases.</p>
+        <section id="phase4">
+            <h2 class="section-title">Phase 4: NLP & Transformers</h2>
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Core Focus Areas</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <p>Shift focus to Natural Language Processing (NLP), starting with foundational text processing techniques and progressing to the revolutionary Transformer architecture.</p>
+                    
+                    <h4>Key Learning Outcomes</h4>
+                    <ul>
+                        <li>Expertise in NLP fundamentals, text vectorization, and word embeddings</li>
+                        <li>Understanding of the core Transformer architecture</li>
+                        <li>Ability to build sequence models with RNNs, LSTMs, and GRUs</li>
+                        <li>Skills in text classification and summarization</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Weekly Breakdown</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Week</th>
+                                    <th>Focus Area</th>
+                                    <th>Daily Topics (Days 1-5)</th>
+                                    <th>Weekend Project</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Text Preprocessing & Vectorization</td>
+                                    <td>Tokenization, stopword removal, stemming, CountVectorizer, TF-IDF</td>
+                                    <td>Preprocess text dataset, build text classifier</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Word Embeddings & Text Classification</td>
+                                    <td>Word2Vec, GloVe, Naive Bayes, SVM for text</td>
+                                    <td>Implement word embeddings, compare classifiers</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>RNNs & Sequence Models</td>
+                                    <td>RNNs, LSTMs, GRUs, sentiment analysis</td>
+                                    <td>Build LSTM/GRU for sentiment classification</td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>Transformer Architecture</td>
+                                    <td>Self-attention, positional encoding, BERT, GPT</td>
+                                    <td>Explore Hugging Face Transformers library</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <h4>6-Month AI/ML + LLM Curriculum Overview</h4>
-        <table>
-            <thead>
-                <tr>
-                    <th>Phase</th>
-                    <th>Weeks</th>
-                    <th>Core Focus Areas</th>
-                    <th>Key Learning Outcomes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1-4</td>
-                    <td>Foundations: Python, Data Science, & Essential Math</td>
-                    <td>Proficiency in Python for data manipulation and visualization; foundational understanding of statistics, probability, and linear algebra.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>5-8</td>
-                    <td>Core Machine Learning: Supervised & Unsupervised Learning</td>
-                    <td>Ability to implement, train, and evaluate classical ML models; understanding of feature engineering, model tuning, and cross-validation.</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>9-12</td>
-                    <td>Deep Learning Fundamentals & Computer Vision</td>
-                    <td>Competence in designing, training, and deploying Convolutional Neural Networks (CNNs); practical experience with image classification and data augmentation.</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>13-16</td>
-                    <td>Natural Language Processing (NLP) & Transformers</td>
-                    <td>Expertise in NLP fundamentals, text vectorization, word embeddings, and understanding the core Transformer architecture.</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>17-20</td>
-                    <td>Large Language Models (LLMs) & Agent Design</td>
-                    <td>Mastery of prompt engineering, LLM APIs, agent orchestration with frameworks like LangChain, RAG, and fine-tuning techniques.</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>21-24</td>
-                    <td>Full-Stack AI Development, MLOps & Capstones</td>
-                    <td>Ability to build, deploy, monitor, and maintain end-to-end AI applications, integrating various AI modalities and MLOps best practices.</td>
-                </tr>
-            </tbody>
-        </table>
+        <section id="phase5">
+            <h2 class="section-title">Phase 5: LLMs & Agent Design</h2>
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Core Focus Areas</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <p>Dive deep into Large Language Models (LLMs), covering practical aspects of interacting with them, designing intelligent agents, and advanced techniques like RAG and fine-tuning.</p>
+                    
+                    <h4>Key Learning Outcomes</h4>
+                    <ul>
+                        <li>Mastery of prompt engineering and LLM APIs</li>
+                        <li>Skills in agent orchestration with LangChain/LangGraph</li>
+                        <li>Understanding of RAG and vector databases</li>
+                        <li>Ability to fine-tune LLMs using PEFT techniques</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Weekly Breakdown</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Week</th>
+                                    <th>Focus Area</th>
+                                    <th>Daily Topics (Days 1-5)</th>
+                                    <th>Weekend Project</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>17</td>
+                                    <td>Prompt Engineering & APIs</td>
+                                    <td>Prompting principles, structured output, tool calling</td>
+                                    <td>Build chatbot with structured JSON output</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>LangChain & Agents</td>
+                                    <td>Chains, prompt templates, LangGraph, multi-agent systems</td>
+                                    <td>Build research assistant agent</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>Vector DBs & RAG</td>
+                                    <td>Vector databases, embeddings, RAG implementation</td>
+                                    <td>Build PDF chatbot with citations</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>LLM Fine-tuning</td>
+                                    <td>LoRA, QLoRA, quantization, PEFT</td>
+                                    <td>Fine-tune LLM with domain-specific data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <h2 id="phase1">2. Phase 1: Foundations – Python, Data Science, & Essential Mathematics (Weeks 1-4)</h2>
-        <p>This initial phase establishes the indispensable bedrock for any aspiring AI/ML engineer. It systematically builds proficiency in Python programming, data manipulation, visualization, and the core mathematical concepts that underpin machine learning algorithms.</p>
+        <section id="phase6">
+            <h2 class="section-title">Phase 6: Full-Stack AI Development & MLOps</h2>
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Core Focus Areas</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <p>Integrate all learned concepts into the practical aspects of building and deploying end-to-end AI applications. Cover backend API development, UI creation, and MLOps principles.</p>
+                    
+                    <h4>Key Learning Outcomes</h4>
+                    <ul>
+                        <li>Ability to build, deploy, monitor, and maintain end-to-end AI applications</li>
+                        <li>Understanding of MLOps principles and CI/CD for ML</li>
+                        <li>Skills in containerization with Docker and orchestration with Kubernetes</li>
+                        <li>Experience with full-stack AI project development</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-header" onclick="toggleSubsection(this)">
+                    <h3>Weekly Breakdown</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="subsection-content">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Week</th>
+                                    <th>Focus Area</th>
+                                    <th>Daily Topics (Days 1-5)</th>
+                                    <th>Weekend Project</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>21</td>
+                                    <td>Backend APIs</td>
+                                    <td>FastAPI basics, CRUD operations, database integration</td>
+                                    <td>Build FastAPI backend for AI model</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>UI Development</td>
+                                    <td>Streamlit basics, chat UIs, Docker, deployment</td>
+                                    <td>Build Streamlit UI, Dockerize application</td>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td>MLOps & Observability</td>
+                                    <td>CI/CD for ML, MLFlow, caching, Kubernetes</td>
+                                    <td>Set up MLFlow, implement caching</td>
+                                </tr>
+                                <tr>
+                                    <td>24</td>
+                                    <td>Capstone Projects</td>
+                                    <td>Advanced architectures, hybrid systems, project work</td>
+                                    <td>Complete end-to-end AI applications</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <h3>2.1 Setting Up the Development Environment</h3>
-        <ul>
-            <li><strong>Python Installation and Package Management:</strong> The curriculum recommends installing Anaconda, which is the most widely used Python distribution for data science.</li>
-            <li><strong>Jupyter Notebook for Interactive Development:</strong> Jupyter Notebook is an incredibly powerful tool for interactively developing and presenting data science projects.</li>
-        </ul>
-        
-        <h3>2.2 Python Programming for Data Science</h3>
-        <ul>
-            <li><strong>Core Python Concepts:</strong> Reviewing fundamental Python programming concepts, including data types, control flow, functions, and object-oriented programming (OOP).</li>
-            <li><strong>NumPy for Numerical Computing:</strong> NumPy is an essential Python package for data science, primarily known for its <code>ndarray</code> object.</li>
-            <li><strong>Pandas for Data Manipulation and Analysis:</strong> Pandas is a data manipulation package in Python specifically designed for tabular data.</li>
-            <li><strong>Matplotlib and Seaborn for Data Visualization:</strong> Effective data visualization is key to understanding data distributions, relationships between variables, and identifying patterns or anomalies.</li>
-        </ul>
-        
-        <h3>2.3 Foundational Mathematics for AI/ML</h3>
-        <ul>
-            <li><strong>Descriptive Statistics:</strong> This unit focuses on summarizing and describing data sets.</li>
-            <li><strong>Probability Theory:</strong> Probability theory provides the framework for reasoning in the face of uncertainty.</li>
-            <li><strong>Hypothesis Testing and A/B Testing:</strong> This section introduces statistical methods for making decisions about a population based on sample data.</li>
-            <li><strong>Linear Algebra:</strong> Linear algebra is the backbone of many machine learning algorithms, providing the mathematical framework for handling high-dimensional data and transformations.</li>
-        </ul>
-        
-        <h4>Phase 1 Weekly Breakdown</h4>
-        <table>
-            <thead>
-                <tr>
-                    <th>Week</th>
-                    <th>Focus Area</th>
-                    <th>Daily Topics (Days 1-5)</th>
-                    <th>Weekend Project/Activity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>1</strong></td>
-                    <td><strong>Python Fundamentals & Jupyter</strong></td>
-                    <td>Day 1: Python syntax, data types, variables, basic I/O. Day 2: Control flow (if/else, loops), functions, modules. Day 3: Object-Oriented Programming (OOP) basics in Python. Day 4: Intro to Jupyter Notebook, Markdown, code cells, kernel. Day 5: Jupyter practice, basic Python scripts, debugging in Jupyter.</td>
-                    <td>Set up Anaconda/Jupyter environment. Complete "Hello World" in Jupyter. Practice basic Python problems (e.g., FizzBuzz, list manipulation).</td>
-                </tr>
-                <tr>
-                    <td><strong>2</strong></td>
-                    <td><strong>NumPy & Pandas for Data Handling</strong></td>
-                    <td>Day 1: NumPy arrays: creation, attributes. Day 2: Basic array operations, indexing, slicing. Day 3: Matrix multiplication, aggregation functions. Day 4: Pandas Series & DataFrames: creation, inspection. Day 5: Data selection, adding/modifying columns.</td>
-                    <td>Implement common linear algebra operations using NumPy. Load a small dataset into Pandas, perform basic inspection.</td>
-                </tr>
-                <!-- Additional weeks would follow the same pattern -->
-            </tbody>
-        </table>
-        
-        <a href="#" class="back-to-top">↑ Back to top</a>
-        
-        <!-- Continue with all other phases following the same structure -->
-        
-        <h2 id="phase2">3. Phase 2: Core Machine Learning – Supervised & Unsupervised Learning (Weeks 5-8)</h2>
-        <p>Building upon the strong foundational skills, Phase 2 delves into the core paradigms of machine learning: supervised and unsupervised learning.</p>
-        
-        <!-- Phase 2 content would follow the same pattern as Phase 1 -->
-        
-        <h2 id="phase3">4. Phase 3: Deep Learning Fundamentals & Computer Vision (Weeks 9-12)</h2>
-        <p>Phase 3 marks a transition into the more advanced realm of deep learning, with a specific focus on Computer Vision.</p>
-        
-        <!-- Phase 3 content would follow the same pattern -->
-        
-        <h2 id="phase4">5. Phase 4: Natural Language Processing (NLP) & Transformers (Weeks 13-16)</h2>
-        <p>The fourth phase shifts focus to Natural Language Processing (NLP), starting with foundational text processing techniques and progressing to the revolutionary Transformer architecture.</p>
-        
-        <!-- Phase 4 content would follow the same pattern -->
-        
-        <h2 id="phase5">6. Phase 5: Large Language Models (LLMs) & Agent Design (Weeks 17-20)</h2>
-        <p>This phase dives deep into Large Language Models (LLMs), covering practical aspects of interacting with them, designing intelligent agents, and advanced techniques like Retrieval-Augmented Generation (RAG) and fine-tuning.</p>
-        
-        <!-- Phase 5 content would follow the same pattern -->
-        
-        <h2 id="phase6">7. Phase 6: Full-Stack AI Development, MLOps & Capstones (Weeks 21-24)</h2>
-        <p>The final phase integrates all learned concepts into the practical aspects of building and deploying end-to-end AI applications.</p>
-        
-        <!-- Phase 6 content would follow the same pattern -->
-        
-        <h2>8. Conclusion: The Journey to Professional ML Engineering</h2>
-        <p>This comprehensive 6-month curriculum provides a meticulously structured pathway for engineers to transition from foundational understanding to professional proficiency in AI/ML and LLM development. The program's design emphasizes the critical interplay between theoretical knowledge and hands-on application, recognizing that true mastery in this rapidly evolving field is forged through practical problem-solving and continuous engagement with real-world challenges.</p>
-    </div>
+        <section>
+            <h2 class="section-title">Conclusion: The Journey to Professional ML Engineering</h2>
+            <div class="subsection">
+                <div class="subsection-content">
+                    <p>This comprehensive 6-month curriculum provides a meticulously structured pathway for engineers to transition from foundational understanding to professional proficiency in AI/ML and LLM development. The program's design emphasizes the critical interplay between theoretical knowledge and hands-on application, recognizing that true mastery in this rapidly evolving field is forged through practical problem-solving and continuous engagement with real-world challenges.</p>
+                    <p>Beyond technical skills, the program instills a strong commitment to ethical AI development. Discussions on data privacy, algorithmic bias, transparency, and the responsible deployment of AI systems are woven throughout the curriculum, preparing engineers to build solutions that are not only effective but also equitable and trustworthy.</p>
+                    <p>Upon completion, participants will possess a robust portfolio of projects, demonstrating their ability to tackle diverse AI/ML problems, from data wrangling and model selection to hyperparameter tuning and deployment. This practical experience, combined with a solid theoretical foundation, positions them to excel as professional Machine Learning Engineers.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Curriculum</h3>
+                    <ul>
+                        <li><a href="#phase1">Phase 1: Foundations</a></li>
+                        <li><a href="#phase2">Phase 2: Core ML</a></li>
+                        <li><a href="#phase3">Phase 3: Deep Learning</a></li>
+                        <li><a href="#phase4">Phase 4: NLP & Transformers</a></li>
+                        <li><a href="#phase5">Phase 5: LLMs & Agents</a></li>
+                        <li><a href="#phase6">Phase 6: Full-Stack & MLOps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Python Documentation</a></li>
+                        <li><a href="#">TensorFlow Guides</a></li>
+                        <li><a href="#">Hugging Face Transformers</a></li>
+                        <li><a href="#">MLOps Best Practices</a></li>
+                        <li><a href="#">AI Ethics Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Akhil Anilkumar</li>
+                        <li>Senior AI ML Engineer</li>
+                        <li>Cubet Tech Solutions</li>
+                        <li>akhil.anilkumar@cubettech.com</li>
+                        <li>linkedin.com/in/akhilmon-anilkumar</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Comprehensive AI/ML Curriculum for Engineers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
     
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 80,
                     behavior: 'smooth'
                 });
-            });
-        });
+            }
+        }
         
-        // Back to top button functionality
-        const backToTopButton = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.style.opacity = '1';
-                backToTopButton.style.visibility = 'visible';
+        // Toggle subsection content
+        function toggleSubsection(header) {
+            const subsection = header.parentElement;
+            const content = subsection.querySelector('.subsection-content');
+            const icon = header.querySelector('i');
+            
+            subsection.classList.toggle('active');
+            
+            if (subsection.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
             } else {
-                backToTopButton.style.opacity = '0';
-                backToTopButton.style.visibility = 'hidden';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+        
+        // Add animation to phase cards on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const phaseCards = document.querySelectorAll('.phase-card');
+            phaseCards.forEach((card, index) => {
+                card.style.animation = `fadeIn 0.5s ease-out ${index * 0.1}s forwards`;
+                card.style.opacity = '0';
+            });
+            
+            // Open the first subsection by default
+            const firstSubsection = document.querySelector('.subsection');
+            if (firstSubsection) {
+                firstSubsection.classList.add('active');
+                const icon = firstSubsection.querySelector('.subsection-header i');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
             }
         });
     </script>
