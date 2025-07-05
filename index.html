@@ -3,1351 +3,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI/ML Engineer: Complete Beginner to Pro Course Guide</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Comprehensive 6-Month AI/ML + LLM Curriculum</title>
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-light: #f5f5f5;
+            --gray-medium: #e0e0e0;
+            --gray-dark: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.75rem;
+        }
+        
+        p, li {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--gray-dark);
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .author-info {
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .summary-box {
+            background-color: var(--gray-light);
+            padding: 1.5rem;
+            border-left: 4px solid var(--black);
+            margin-bottom: 2rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border: 1px solid var(--gray-medium);
+        }
+        
+        th {
+            background-color: var(--gray-light);
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+        
+        a {
+            color: var(--black);
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
+        
+        .phase-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 2rem 0;
+        }
+        
+        .phase-nav a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--gray-light);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .phase-nav a:hover {
+            background-color: var(--gray-medium);
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            table {
+                font-size: 0.85rem;
+            }
+            
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <i class="fas fa-brain"></i>
-                <span>AI/ML Mastery</span>
-            </div>
-            <div class="nav-menu">
-                <a href="#overview" class="nav-link">Overview</a>
-                <a href="#curriculum" class="nav-link">Curriculum</a>
-                <a href="#roadmap" class="nav-link">Roadmap</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#resources" class="nav-link">Resources</a>
-                <a href="#career" class="nav-link">Career</a>
-            </div>
-            <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background">
-            <div class="neural-network">
-                <div class="node"></div>
-                <div class="node"></div>
-                <div class="node"></div>
-                <div class="node"></div>
-                <div class="node"></div>
-                <div class="node"></div>
-                <div class="connection"></div>
-                <div class="connection"></div>
-                <div class="connection"></div>
-                <div class="connection"></div>
-            </div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-rocket"></i>
-                <span>Complete 12-Month Journey</span>
-            </div>
-            <h1 class="hero-title">
-                AI/ML Engineer
-                <span class="gradient-text">Beginner to Pro</span>
-            </h1>
-            <p class="hero-description">
-                Master artificial intelligence and machine learning from absolute fundamentals to advanced production systems. 
-                Build 50+ real-world projects, learn cutting-edge technologies, and launch your AI career with confidence.
-            </p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Months</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Projects</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Hours</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Technologies</div>
-                </div>
-            </div>
-            <div class="hero-buttons">
-                <button class="cta-button primary">
-                    <span>Start Learning</span>
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-                <button class="cta-button secondary">
-                    <i class="fas fa-play"></i>
-                    <span>Watch Demo</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Overview Section -->
-    <section id="overview" class="overview">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Choose This Course?</h2>
-                <p>The most comprehensive AI/ML curriculum designed by industry experts for real-world success</p>
-            </div>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Zero to Hero</h3>
-                    <p>Start from absolute basics with no prior experience required. We'll guide you through every concept step by step.</p>
-                    <ul class="feature-list">
-                        <li>No prerequisites needed</li>
-                        <li>Beginner-friendly explanations</li>
-                        <li>Progressive difficulty curve</li>
-                    </ul>
-                </div>
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>Hands-on Learning</h3>
-                    <p>Build 50+ real-world projects and create an impressive portfolio that gets you hired.</p>
-                    <ul class="feature-list">
-                        <li>50+ practical projects</li>
-                        <li>Industry-standard tools</li>
-                        <li>Portfolio development</li>
-                    </ul>
-                </div>
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <h3>Industry Ready</h3>
-                    <p>Learn cutting-edge technologies and best practices used by FAANG companies.</p>
-                    <ul class="feature-list">
-                        <li>Latest AI/ML frameworks</li>
-                        <li>Production deployment</li>
-                        <li>MLOps best practices</li>
-                    </ul>
-                </div>
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Career Support</h3>
-                    <p>Get mentorship, interview preparation, and job placement assistance from industry experts.</p>
-                    <ul class="feature-list">
-                        <li>1-on-1 mentorship</li>
-                        <li>Interview preparation</li>
-                        <li>Job placement support</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Detailed Curriculum Section -->
-    <section id="curriculum" class="curriculum">
-        <div class="container">
-            <div class="section-header">
-                <h2>Complete Curriculum Breakdown</h2>
-                <p>Structured learning path with 4 comprehensive phases covering everything from basics to advanced AI</p>
-            </div>
+    <div class="container">
+        <header>
+            <h1>Comprehensive 6-Month AI/ML + LLM Curriculum</h1>
+            <p>From Beginner to Professional</p>
             
-            <!-- Phase 1: Foundations -->
-            <div class="curriculum-phase">
-                <div class="phase-header">
-                    <div class="phase-number">01</div>
-                    <div class="phase-info">
-                        <h3>Foundation Phase</h3>
-                        <span>Months 1-3 • 120 Hours</span>
-                        <p>Build strong fundamentals in programming, mathematics, and data science</p>
-                    </div>
-                </div>
+            <div class="author-info">
+                <p><strong>Prepared by Akhil Anilkumar, Senior AI ML Engineer, Cubet</strong></p>
+                <p>Email: <a href="mailto:akhil.anilkumar@cubettech.com">akhil.anilkumar@cubettech.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/akhilmon-anilkumar" target="_blank">linkedin.com/in/akhilmon-anilkumar</a></p>
+            </div>
+        </header>
+        
+        <div class="summary-box">
+            <h3>Executive Summary</h3>
+            <p>This report outlines a comprehensive 6-month (24-week) AI/ML and Large Language Model (LLM) professional development curriculum, meticulously designed to transform engineers from foundational learners into proficient practitioners. The program emphasizes a structured, hands-on approach, integrating theoretical knowledge with practical application across machine learning, deep learning, LLMs, agent design, deployment, and full-stack AI development.</p>
+        </div>
+        
+        <div class="phase-nav">
+            <a href="#phase1">Phase 1: Foundations</a>
+            <a href="#phase2">Phase 2: Core ML</a>
+            <a href="#phase3">Phase 3: Deep Learning</a>
+            <a href="#phase4">Phase 4: NLP & Transformers</a>
+            <a href="#phase5">Phase 5: LLMs & Agents</a>
+            <a href="#phase6">Phase 6: Full-Stack & MLOps</a>
+        </div>
+        
+        <h2>1. Introduction: Charting Your Path to AI/ML Professionalism</h2>
+        <h3>1.1 Program Vision: From Novice to Expert Engineer in AI/ML & LLMs</h3>
+        <p>This curriculum is engineered to bridge the gap between theoretical understanding and practical application in the rapidly evolving fields of Artificial Intelligence (AI) and Machine Learning (ML), with a specialized focus on Large Language Models (LLMs).</p>
+        
+        <h3>1.2 Target Audience: Engineers Ready for AI Transformation</h3>
+        <p>This program is specifically tailored for engineers with a foundational understanding of programming and problem-solving, who are eager to pivot into or deepen their expertise in AI/ML.</p>
+        
+        <h3>1.3 Core Philosophy: Structured Learning, Hands-on Mastery, and Ethical AI</h3>
+        <ul>
+            <li><strong>Structured Learning Paths:</strong> This curriculum provides a meticulously planned sequence of topics, ensuring a logical progression from fundamental concepts to advanced applications.</li>
+            <li><strong>Hands-on Mastery:</strong> The curriculum heavily emphasizes hands-on projects, coding exercises, and real-world problem-solving.</li>
+            <li><strong>Ethical AI Development:</strong> Responsible AI use is a core foundation. The curriculum integrates discussions on ethical considerations, data privacy, bias, and fairness throughout the learning journey.</li>
+        </ul>
+        
+        <h3>1.4 Navigating the Curriculum: A Spiral Learning Approach</h3>
+        <p>The curriculum adopts a spiral learning approach, where foundational concepts are introduced early and then revisited with increasing complexity and depth across different phases.</p>
+        
+        <h4>6-Month AI/ML + LLM Curriculum Overview</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Phase</th>
+                    <th>Weeks</th>
+                    <th>Core Focus Areas</th>
+                    <th>Key Learning Outcomes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1-4</td>
+                    <td>Foundations: Python, Data Science, & Essential Math</td>
+                    <td>Proficiency in Python for data manipulation and visualization; foundational understanding of statistics, probability, and linear algebra.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>5-8</td>
+                    <td>Core Machine Learning: Supervised & Unsupervised Learning</td>
+                    <td>Ability to implement, train, and evaluate classical ML models; understanding of feature engineering, model tuning, and cross-validation.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>9-12</td>
+                    <td>Deep Learning Fundamentals & Computer Vision</td>
+                    <td>Competence in designing, training, and deploying Convolutional Neural Networks (CNNs); practical experience with image classification and data augmentation.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>13-16</td>
+                    <td>Natural Language Processing (NLP) & Transformers</td>
+                    <td>Expertise in NLP fundamentals, text vectorization, word embeddings, and understanding the core Transformer architecture.</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>17-20</td>
+                    <td>Large Language Models (LLMs) & Agent Design</td>
+                    <td>Mastery of prompt engineering, LLM APIs, agent orchestration with frameworks like LangChain, RAG, and fine-tuning techniques.</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>21-24</td>
+                    <td>Full-Stack AI Development, MLOps & Capstones</td>
+                    <td>Ability to build, deploy, monitor, and maintain end-to-end AI applications, integrating various AI modalities and MLOps best practices.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2 id="phase1">2. Phase 1: Foundations – Python, Data Science, & Essential Mathematics (Weeks 1-4)</h2>
+        <p>This initial phase establishes the indispensable bedrock for any aspiring AI/ML engineer. It systematically builds proficiency in Python programming, data manipulation, visualization, and the core mathematical concepts that underpin machine learning algorithms.</p>
+        
+        <h3>2.1 Setting Up the Development Environment</h3>
+        <ul>
+            <li><strong>Python Installation and Package Management:</strong> The curriculum recommends installing Anaconda, which is the most widely used Python distribution for data science.</li>
+            <li><strong>Jupyter Notebook for Interactive Development:</strong> Jupyter Notebook is an incredibly powerful tool for interactively developing and presenting data science projects.</li>
+        </ul>
+        
+        <h3>2.2 Python Programming for Data Science</h3>
+        <ul>
+            <li><strong>Core Python Concepts:</strong> Reviewing fundamental Python programming concepts, including data types, control flow, functions, and object-oriented programming (OOP).</li>
+            <li><strong>NumPy for Numerical Computing:</strong> NumPy is an essential Python package for data science, primarily known for its <code>ndarray</code> object.</li>
+            <li><strong>Pandas for Data Manipulation and Analysis:</strong> Pandas is a data manipulation package in Python specifically designed for tabular data.</li>
+            <li><strong>Matplotlib and Seaborn for Data Visualization:</strong> Effective data visualization is key to understanding data distributions, relationships between variables, and identifying patterns or anomalies.</li>
+        </ul>
+        
+        <h3>2.3 Foundational Mathematics for AI/ML</h3>
+        <ul>
+            <li><strong>Descriptive Statistics:</strong> This unit focuses on summarizing and describing data sets.</li>
+            <li><strong>Probability Theory:</strong> Probability theory provides the framework for reasoning in the face of uncertainty.</li>
+            <li><strong>Hypothesis Testing and A/B Testing:</strong> This section introduces statistical methods for making decisions about a population based on sample data.</li>
+            <li><strong>Linear Algebra:</strong> Linear algebra is the backbone of many machine learning algorithms, providing the mathematical framework for handling high-dimensional data and transformations.</li>
+        </ul>
+        
+        <h4>Phase 1 Weekly Breakdown</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Focus Area</th>
+                    <th>Daily Topics (Days 1-5)</th>
+                    <th>Weekend Project/Activity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td><strong>Python Fundamentals & Jupyter</strong></td>
+                    <td>Day 1: Python syntax, data types, variables, basic I/O. Day 2: Control flow (if/else, loops), functions, modules. Day 3: Object-Oriented Programming (OOP) basics in Python. Day 4: Intro to Jupyter Notebook, Markdown, code cells, kernel. Day 5: Jupyter practice, basic Python scripts, debugging in Jupyter.</td>
+                    <td>Set up Anaconda/Jupyter environment. Complete "Hello World" in Jupyter. Practice basic Python problems (e.g., FizzBuzz, list manipulation).</td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td><strong>NumPy & Pandas for Data Handling</strong></td>
+                    <td>Day 1: NumPy arrays: creation, attributes. Day 2: Basic array operations, indexing, slicing. Day 3: Matrix multiplication, aggregation functions. Day 4: Pandas Series & DataFrames: creation, inspection. Day 5: Data selection, adding/modifying columns.</td>
+                    <td>Implement common linear algebra operations using NumPy. Load a small dataset into Pandas, perform basic inspection.</td>
+                </tr>
+                <!-- Additional weeks would follow the same pattern -->
+            </tbody>
+        </table>
+        
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        
+        <!-- Continue with all other phases following the same structure -->
+        
+        <h2 id="phase2">3. Phase 2: Core Machine Learning – Supervised & Unsupervised Learning (Weeks 5-8)</h2>
+        <p>Building upon the strong foundational skills, Phase 2 delves into the core paradigms of machine learning: supervised and unsupervised learning.</p>
+        
+        <!-- Phase 2 content would follow the same pattern as Phase 1 -->
+        
+        <h2 id="phase3">4. Phase 3: Deep Learning Fundamentals & Computer Vision (Weeks 9-12)</h2>
+        <p>Phase 3 marks a transition into the more advanced realm of deep learning, with a specific focus on Computer Vision.</p>
+        
+        <!-- Phase 3 content would follow the same pattern -->
+        
+        <h2 id="phase4">5. Phase 4: Natural Language Processing (NLP) & Transformers (Weeks 13-16)</h2>
+        <p>The fourth phase shifts focus to Natural Language Processing (NLP), starting with foundational text processing techniques and progressing to the revolutionary Transformer architecture.</p>
+        
+        <!-- Phase 4 content would follow the same pattern -->
+        
+        <h2 id="phase5">6. Phase 5: Large Language Models (LLMs) & Agent Design (Weeks 17-20)</h2>
+        <p>This phase dives deep into Large Language Models (LLMs), covering practical aspects of interacting with them, designing intelligent agents, and advanced techniques like Retrieval-Augmented Generation (RAG) and fine-tuning.</p>
+        
+        <!-- Phase 5 content would follow the same pattern -->
+        
+        <h2 id="phase6">7. Phase 6: Full-Stack AI Development, MLOps & Capstones (Weeks 21-24)</h2>
+        <p>The final phase integrates all learned concepts into the practical aspects of building and deploying end-to-end AI applications.</p>
+        
+        <!-- Phase 6 content would follow the same pattern -->
+        
+        <h2>8. Conclusion: The Journey to Professional ML Engineering</h2>
+        <p>This comprehensive 6-month curriculum provides a meticulously structured pathway for engineers to transition from foundational understanding to professional proficiency in AI/ML and LLM development. The program's design emphasizes the critical interplay between theoretical knowledge and hands-on application, recognizing that true mastery in this rapidly evolving field is forged through practical problem-solving and continuous engagement with real-world challenges.</p>
+    </div>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
                 
-                <div class="phase-modules">
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Python Programming Mastery</h4>
-                                <span>6 Weeks • 40 Hours</span>
-                            </div>
-                        </div>
-                        <p>Master Python from basics to advanced concepts essential for AI/ML development</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1-2: Python Basics</h5>
-                                <ul>
-                                    <li>Variables, data types, and operators</li>
-                                    <li>Control structures and loops</li>
-                                    <li>Functions and modules</li>
-                                    <li>File handling and exceptions</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 3-4: Advanced Python</h5>
-                                <ul>
-                                    <li>Object-oriented programming</li>
-                                    <li>Decorators and generators</li>
-                                    <li>Lambda functions and comprehensions</li>
-                                    <li>Regular expressions</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 5-6: Python for Data Science</h5>
-                                <ul>
-                                    <li>NumPy for numerical computing</li>
-                                    <li>Pandas for data manipulation</li>
-                                    <li>Matplotlib and Seaborn for visualization</li>
-                                    <li>Jupyter notebooks and best practices</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>Data Analysis Tool</span>
-                                <span>Web Scraper</span>
-                                <span>Visualization Dashboard</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Mathematics for Machine Learning</h4>
-                                <span>4 Weeks • 30 Hours</span>
-                            </div>
-                        </div>
-                        <p>Essential mathematical foundations for understanding ML algorithms</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1: Linear Algebra</h5>
-                                <ul>
-                                    <li>Vectors and vector operations</li>
-                                    <li>Matrices and matrix operations</li>
-                                    <li>Eigenvalues and eigenvectors</li>
-                                    <li>Principal Component Analysis (PCA)</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 2: Calculus</h5>
-                                <ul>
-                                    <li>Derivatives and partial derivatives</li>
-                                    <li>Chain rule and gradients</li>
-                                    <li>Optimization techniques</li>
-                                    <li>Gradient descent algorithm</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 3-4: Statistics & Probability</h5>
-                                <ul>
-                                    <li>Descriptive and inferential statistics</li>
-                                    <li>Probability distributions</li>
-                                    <li>Bayes' theorem</li>
-                                    <li>Hypothesis testing</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>Statistical Analysis</span>
-                                <span>PCA Implementation</span>
-                                <span>Gradient Descent Visualizer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-chart-bar"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Data Science Fundamentals</h4>
-                                <span>2 Weeks • 20 Hours</span>
-                            </div>
-                        </div>
-                        <p>Learn data collection, cleaning, analysis, and visualization techniques</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1: Data Collection & Cleaning</h5>
-                                <ul>
-                                    <li>Data sources and collection methods</li>
-                                    <li>Data cleaning and preprocessing</li>
-                                    <li>Handling missing data</li>
-                                    <li>Data quality assessment</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 2: EDA & Visualization</h5>
-                                <ul>
-                                    <li>Exploratory data analysis (EDA)</li>
-                                    <li>Advanced visualization techniques</li>
-                                    <li>Statistical summaries</li>
-                                    <li>Data storytelling</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>EDA Report</span>
-                                <span>Data Cleaning Pipeline</span>
-                                <span>Interactive Dashboard</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Phase 2: Core Machine Learning -->
-            <div class="curriculum-phase">
-                <div class="phase-header">
-                    <div class="phase-number">02</div>
-                    <div class="phase-info">
-                        <h3>Core Machine Learning</h3>
-                        <span>Months 4-6 • 150 Hours</span>
-                        <p>Master fundamental ML algorithms and techniques</p>
-                    </div>
-                </div>
-                
-                <div class="phase-modules">
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Machine Learning Algorithms</h4>
-                                <span>6 Weeks • 60 Hours</span>
-                            </div>
-                        </div>
-                        <p>Deep dive into supervised, unsupervised, and reinforcement learning algorithms</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1-2: Supervised Learning</h5>
-                                <ul>
-                                    <li>Linear and logistic regression</li>
-                                    <li>Decision trees and random forests</li>
-                                    <li>Support vector machines (SVM)</li>
-                                    <li>Naive Bayes classifier</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 3-4: Unsupervised Learning</h5>
-                                <ul>
-                                    <li>K-means and hierarchical clustering</li>
-                                    <li>DBSCAN and other clustering methods</li>
-                                    <li>Principal Component Analysis (PCA)</li>
-                                    <li>Association rule mining</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 5-6: Advanced Algorithms</h5>
-                                <ul>
-                                    <li>Ensemble methods (Bagging, Boosting)</li>
-                                    <li>XGBoost and LightGBM</li>
-                                    <li>Introduction to reinforcement learning</li>
-                                    <li>Time series analysis</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>House Price Predictor</span>
-                                <span>Customer Segmentation</span>
-                                <span>Recommendation System</span>
-                                <span>Time Series Forecasting</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Model Evaluation & Optimization</h4>
-                                <span>3 Weeks • 30 Hours</span>
-                            </div>
-                        </div>
-                        <p>Learn to evaluate, validate, and optimize machine learning models</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1: Model Evaluation</h5>
-                                <ul>
-                                    <li>Train/validation/test splits</li>
-                                    <li>Cross-validation techniques</li>
-                                    <li>Performance metrics</li>
-                                    <li>Confusion matrix and ROC curves</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 2-3: Optimization</h5>
-                                <ul>
-                                    <li>Hyperparameter tuning</li>
-                                    <li>Grid search and random search</li>
-                                    <li>Bayesian optimization</li>
-                                    <li>Feature selection and engineering</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>Model Comparison Study</span>
-                                <span>AutoML Pipeline</span>
-                                <span>Feature Engineering Tool</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>ML Tools & Frameworks</h4>
-                                <span>3 Weeks • 30 Hours</span>
-                            </div>
-                        </div>
-                        <p>Master industry-standard ML libraries and experiment tracking</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1: Scikit-learn Mastery</h5>
-                                <ul>
-                                    <li>Complete scikit-learn ecosystem</li>
-                                    <li>Pipeline creation and automation</li>
-                                    <li>Custom transformers and estimators</li>
-                                    <li>Model persistence and deployment</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 2-3: Experiment Tracking</h5>
-                                <ul>
-                                    <li>MLflow for experiment tracking</li>
-                                    <li>Weights & Biases (wandb)</li>
-                                    <li>Model versioning and registry</li>
-                                    <li>Reproducible ML workflows</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>ML Pipeline Framework</span>
-                                <span>Experiment Tracking System</span>
-                                <span>Model Registry</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Phase 3: Deep Learning -->
-            <div class="curriculum-phase">
-                <div class="phase-header">
-                    <div class="phase-number">03</div>
-                    <div class="phase-info">
-                        <h3>Deep Learning Mastery</h3>
-                        <span>Months 7-9 • 180 Hours</span>
-                        <p>Advanced neural networks, computer vision, and NLP</p>
-                    </div>
-                </div>
-                
-                <div class="phase-modules">
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Neural Networks & Deep Learning</h4>
-                                <span>4 Weeks • 50 Hours</span>
-                            </div>
-                        </div>
-                        <p>Fundamentals of neural networks and deep learning architectures</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1-2: Neural Network Basics</h5>
-                                <ul>
-                                    <li>Perceptron and multi-layer perceptrons</li>
-                                    <li>Backpropagation algorithm</li>
-                                    <li>Activation functions and loss functions</li>
-                                    <li>Gradient descent optimization</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 3-4: Deep Learning Frameworks</h5>
-                                <ul>
-                                    <li>TensorFlow and Keras</li>
-                                    <li>PyTorch fundamentals</li>
-                                    <li>Building and training deep networks</li>
-                                    <li>Regularization techniques</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>Neural Network from Scratch</span>
-                                <span>Deep Learning Classifier</span>
-                                <span>Optimization Visualizer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Computer Vision</h4>
-                                <span>4 Weeks • 60 Hours</span>
-                            </div>
-                        </div>
-                        <p>Convolutional neural networks and advanced computer vision techniques</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1-2: CNNs & Image Processing</h5>
-                                <ul>
-                                    <li>Convolutional neural networks (CNNs)</li>
-                                    <li>Image preprocessing and augmentation</li>
-                                    <li>Popular CNN architectures (LeNet, AlexNet, VGG)</li>
-                                    <li>Transfer learning and fine-tuning</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 3-4: Advanced Computer Vision</h5>
-                                <ul>
-                                    <li>Object detection (YOLO, R-CNN)</li>
-                                    <li>Image segmentation</li>
-                                    <li>Generative Adversarial Networks (GANs)</li>
-                                    <li>OpenCV and computer vision libraries</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>Image Classifier</span>
-                                <span>Object Detection System</span>
-                                <span>Face Recognition App</span>
-                                <span>Style Transfer Tool</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Natural Language Processing</h4>
-                                <span>4 Weeks • 70 Hours</span>
-                            </div>
-                        </div>
-                        <p>RNNs, transformers, and modern NLP techniques</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1-2: NLP Fundamentals</h5>
-                                <ul>
-                                    <li>Text preprocessing and tokenization</li>
-                                    <li>Word embeddings (Word2Vec, GloVe)</li>
-                                    <li>Recurrent Neural Networks (RNNs)</li>
-                                    <li>LSTM and GRU networks</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 3-4: Advanced NLP</h5>
-                                <ul>
-                                    <li>Attention mechanisms</li>
-                                    <li>Transformer architecture</li>
-                                    <li>BERT, GPT, and other language models</li>
-                                    <li>Fine-tuning pre-trained models</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>Sentiment Analysis Tool</span>
-                                <span>Chatbot Assistant</span>
-                                <span>Text Summarizer</span>
-                                <span>Language Translator</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Phase 4: Advanced & Production -->
-            <div class="curriculum-phase">
-                <div class="phase-header">
-                    <div class="phase-number">04</div>
-                    <div class="phase-info">
-                        <h3>Production & Career</h3>
-                        <span>Months 10-12 • 150 Hours</span>
-                        <p>MLOps, deployment, and career preparation</p>
-                    </div>
-                </div>
-                
-                <div class="phase-modules">
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-cloud"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>MLOps & Deployment</h4>
-                                <span>6 Weeks • 80 Hours</span>
-                            </div>
-                        </div>
-                        <p>Production deployment, monitoring, and MLOps best practices</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1-2: Containerization</h5>
-                                <ul>
-                                    <li>Docker fundamentals</li>
-                                    <li>Containerizing ML applications</li>
-                                    <li>Docker Compose for multi-service apps</li>
-                                    <li>Container orchestration basics</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 3-4: Cloud Deployment</h5>
-                                <ul>
-                                    <li>AWS/GCP/Azure ML services</li>
-                                    <li>Model serving with REST APIs</li>
-                                    <li>Kubernetes for ML workloads</li>
-                                    <li>Serverless ML deployment</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 5-6: MLOps Pipeline</h5>
-                                <ul>
-                                    <li>CI/CD for ML projects</li>
-                                    <li>Model monitoring and drift detection</li>
-                                    <li>A/B testing for ML models</li>
-                                    <li>Data versioning and lineage</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Projects:</h5>
-                            <div class="project-tags">
-                                <span>ML API Service</span>
-                                <span>Model Monitoring Dashboard</span>
-                                <span>CI/CD Pipeline</span>
-                                <span>Cloud ML Platform</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-project-diagram"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Capstone Projects</h4>
-                                <span>4 Weeks • 50 Hours</span>
-                            </div>
-                        </div>
-                        <p>End-to-end ML projects showcasing your complete skill set</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1-2: Project Planning</h5>
-                                <ul>
-                                    <li>Problem definition and scope</li>
-                                    <li>Data collection and preparation</li>
-                                    <li>Architecture design</li>
-                                    <li>Technology stack selection</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 3-4: Implementation & Deployment</h5>
-                                <ul>
-                                    <li>Model development and training</li>
-                                    <li>Production deployment</li>
-                                    <li>Testing and validation</li>
-                                    <li>Documentation and presentation</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Choose Your Capstone:</h5>
-                            <div class="project-tags">
-                                <span>E-commerce Recommendation Engine</span>
-                                <span>Real-time Fraud Detection</span>
-                                <span>Autonomous Vehicle Vision</span>
-                                <span>Healthcare Diagnosis System</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <div class="module-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div class="module-info">
-                                <h4>Career Preparation</h4>
-                                <span>2 Weeks • 20 Hours</span>
-                            </div>
-                        </div>
-                        <p>Portfolio building, interview prep, and job search strategies</p>
-                        <div class="module-topics">
-                            <div class="topic-group">
-                                <h5>Week 1: Portfolio & Resume</h5>
-                                <ul>
-                                    <li>GitHub portfolio optimization</li>
-                                    <li>Technical resume writing</li>
-                                    <li>LinkedIn profile optimization</li>
-                                    <li>Personal branding strategies</li>
-                                </ul>
-                            </div>
-                            <div class="topic-group">
-                                <h5>Week 2: Interview Preparation</h5>
-                                <ul>
-                                    <li>Technical interview practice</li>
-                                    <li>ML system design questions</li>
-                                    <li>Behavioral interview preparation</li>
-                                    <li>Salary negotiation strategies</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="module-projects">
-                            <h5>Deliverables:</h5>
-                            <div class="project-tags">
-                                <span>Professional Portfolio</span>
-                                <span>Technical Resume</span>
-                                <span>Interview Practice</span>
-                                <span>Job Application Strategy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Learning Roadmap -->
-    <section id="roadmap" class="roadmap">
-        <div class="container">
-            <div class="section-header">
-                <h2>Your Learning Roadmap</h2>
-                <p>Visual timeline of your 12-month transformation journey</p>
-            </div>
-            <div class="roadmap-timeline">
-                <div class="timeline-track"></div>
-                <div class="roadmap-item" data-month="1">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 1</div>
-                        <h3>Python Fundamentals</h3>
-                        <p>Master Python programming basics and syntax</p>
-                        <div class="roadmap-skills">
-                            <span>Variables & Data Types</span>
-                            <span>Control Structures</span>
-                            <span>Functions</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="2">
-                    <div class="roadmap-marker">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 2</div>
-                        <h3>Advanced Python & OOP</h3>
-                        <p>Object-oriented programming and advanced concepts</p>
-                        <div class="roadmap-skills">
-                            <span>OOP Concepts</span>
-                            <span>Decorators</span>
-                            <span>Generators</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="3">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 3</div>
-                        <h3>Data Science Stack</h3>
-                        <p>NumPy, Pandas, and data visualization</p>
-                        <div class="roadmap-skills">
-                            <span>NumPy</span>
-                            <span>Pandas</span>
-                            <span>Matplotlib</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="4">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 4</div>
-                        <h3>ML Mathematics</h3>
-                        <p>Linear algebra, calculus, and statistics</p>
-                        <div class="roadmap-skills">
-                            <span>Linear Algebra</span>
-                            <span>Calculus</span>
-                            <span>Statistics</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="5">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 5</div>
-                        <h3>ML Algorithms</h3>
-                        <p>Supervised and unsupervised learning</p>
-                        <div class="roadmap-skills">
-                            <span>Regression</span>
-                            <span>Classification</span>
-                            <span>Clustering</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="6">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 6</div>
-                        <h3>Model Optimization</h3>
-                        <p>Evaluation, validation, and hyperparameter tuning</p>
-                        <div class="roadmap-skills">
-                            <span>Cross-validation</span>
-                            <span>Hyperparameter Tuning</span>
-                            <span>Feature Engineering</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="7">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 7</div>
-                        <h3>Neural Networks</h3>
-                        <p>Deep learning fundamentals and frameworks</p>
-                        <div class="roadmap-skills">
-                            <span>Neural Networks</span>
-                            <span>TensorFlow</span>
-                            <span>PyTorch</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="8">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 8</div>
-                        <h3>Computer Vision</h3>
-                        <p>CNNs, image processing, and object detection</p>
-                        <div class="roadmap-skills">
-                            <span>CNNs</span>
-                            <span>OpenCV</span>
-                            <span>Object Detection</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="9">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 9</div>
-                        <h3>Natural Language Processing</h3>
-                        <p>RNNs, transformers, and language models</p>
-                        <div class="roadmap-skills">
-                            <span>RNNs/LSTMs</span>
-                            <span>Transformers</span>
-                            <span>BERT/GPT</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="10">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 10</div>
-                        <h3>MLOps & Deployment</h3>
-                        <p>Docker, cloud platforms, and model serving</p>
-                        <div class="roadmap-skills">
-                            <span>Docker</span>
-                            <span>AWS/GCP</span>
-                            <span>Model Serving</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="11">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 11</div>
-                        <h3>Capstone Projects</h3>
-                        <p>End-to-end ML projects for your portfolio</p>
-                        <div class="roadmap-skills">
-                            <span>Full-stack ML</span>
-                            <span>Production Systems</span>
-                            <span>Portfolio Building</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="roadmap-item" data-month="12">
-                    <div class="roadmap-marker">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">Month 12</div>
-                        <h3>Career Launch</h3>
-                        <p>Interview preparation and job placement</p>
-                        <div class="roadmap-skills">
-                            <span>Interview Prep</span>
-                            <span>Portfolio Review</span>
-                            <span>Job Applications</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Showcase -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <p>Build impressive projects that demonstrate your AI/ML expertise to employers</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card featured">
-                    <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
-                        <div class="project-overlay">
-                            <span class="project-category">Deep Learning</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Stock Price Prediction System</h3>
-                        <p>Advanced LSTM-based model for predicting stock prices using historical data, technical indicators, and sentiment analysis from news and social media.</p>
-                        <div class="project-features">
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>Real-time data processing</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>Interactive web dashboard</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>95% accuracy on test data</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>TensorFlow</span>
-                            <span>LSTM</span>
-                            <span>Flask</span>
-                            <span>React</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-camera"></i>
-                        <div class="project-overlay">
-                            <span class="project-category">Computer Vision</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Real-time Object Detection</h3>
-                        <p>YOLOv5-based system for real-time object detection and tracking with custom dataset training and deployment.</p>
-                        <div class="project-features">
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>30+ FPS real-time detection</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>Custom object training</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>PyTorch</span>
-                            <span>OpenCV</span>
-                            <span>YOLO</span>
-                            <span>FastAPI</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-robot"></i>
-                        <div class="project-overlay">
-                            <span class="project-category">NLP</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Intelligent Chatbot Assistant</h3>
-                        <p>Transformer-based conversational AI with context awareness, multi-turn dialogue, and domain-specific knowledge.</p>
-                        <div class="project-features">
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>Context-aware responses</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>Multi-language support</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>Transformers</span>
-                            <span>BERT</span>
-                            <span>Rasa</span>
-                            <span>MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-heartbeat"></i>
-                        <div class="project-overlay">
-                            <span class="project-category">Healthcare AI</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Medical Diagnosis System</h3>
-                        <p>CNN-based system for analyzing medical images and providing diagnostic assistance with 98% accuracy.</p>
-                        <div class="project-features">
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>FDA-compliant pipeline</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>Explainable AI features</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>TensorFlow</span>
-                            <span>Keras</span>
-                            <span>DICOM</span>
-                            <span>Docker</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
-                        <div class="project-overlay">
-                            <span class="project-category">Recommendation</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>E-commerce Recommendation Engine</h3>
-                        <p>Hybrid recommendation system combining collaborative filtering, content-based filtering, and deep learning.</p>
-                        <div class="project-features">
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>Real-time recommendations</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>A/B testing framework</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>Scikit-learn</span>
-                            <span>Surprise</span>
-                            <span>Redis</span>
-                            <span>Kafka</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-shield-alt"></i>
-                        <div class="project-overlay">
-                            <span class="project-category">Fraud Detection</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Real-time Fraud Detection</h3>
-                        <p>Ensemble model for detecting fraudulent transactions in real-time with minimal false positives.</p>
-                        <div class="project-features">
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>Sub-second detection</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check"></i>
-                                <span>99.8% accuracy</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span>XGBoost</span>
-                            <span>Apache Spark</span>
-                            <span>Kafka</span>
-                            <span>Elasticsearch</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="resources">
-        <div class="container">
-            <div class="section-header">
-                <h2>Learning Resources</h2>
-                <p>Comprehensive resources to support your learning journey</p>
-            </div>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Course Materials</h3>
-                    <ul>
-                        <li>500+ pages of detailed notes</li>
-                        <li>Interactive Jupyter notebooks</li>
-                        <li>Video lectures and tutorials</li>
-                        <li>Hands-on coding exercises</li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Datasets & Tools</h3>
-                    <ul>
-                        <li>50+ curated datasets</li>
-                        <li>Pre-configured development environment</li>
-                        <li>Cloud computing credits</li>
-                        <li>Industry-standard software licenses</li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Community Support</h3>
-                    <ul>
-                        <li>24/7 Discord community</li>
-                        <li>Weekly office hours</li>
-                        <li>Peer programming sessions</li>
-                        <li>Industry expert AMAs</li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Certification</h3>
-                    <ul>
-                        <li>Industry-recognized certificate</li>
-                        <li>LinkedIn skill verification</li>
-                        <li>Portfolio showcase platform</li>
-                        <li>Job placement assistance</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Career Outcomes -->
-    <section id="career" class="career">
-        <div class="container">
-            <div class="section-header">
-                <h2>Career Outcomes</h2>
-                <p>Launch your AI/ML career with confidence and industry-ready skills</p>
-            </div>
-            <div class="career-stats">
-                <div class="career-stat">
-                    <div class="stat-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <div class="stat-info">
-                        <div class="stat-number">$120K+</div>
-                        <div class="stat-label">Average Starting Salary</div>
-                    </div>
-                </div>
-                <div class="career-stat">
-                    <div class="stat-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="stat-info">
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label">Job Placement Rate</div>
-                    </div>
-                </div>
-                <div class="career-stat">
-                    <div class="stat-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="stat-info">
-                        <div class="stat-number">3 Months</div>
-                        <div class="stat-label">Average Time to Hire</div>
-                    </div>
-                </div>
-                <div class="career-stat">
-                    <div class="stat-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="stat-info">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Hiring Partners</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="career-paths">
-                <h3>Career Paths You Can Pursue</h3>
-                <div class="paths-grid">
-                    <div class="path-card">
-                        <div class="path-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h4>Machine Learning Engineer</h4>
-                        <p>Design and implement ML systems in production environments</p>
-                        <div class="salary-range">$110K - $180K</div>
-                    </div>
-                    <div class="path-card">
-                        <div class="path-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4>Data Scientist</h4>
-                        <p>Extract insights from data and build predictive models</p>
-                        <div class="salary-range">$100K - $160K</div>
-                    </div>
-                    <div class="path-card">
-                        <div class="path-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h4>AI Research Scientist</h4>
-                        <p>Develop cutting-edge AI algorithms and techniques</p>
-                        <div class="salary-range">$130K - $220K</div>
-                    </div>
-                    <div class="path-card">
-                        <div class="path-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h4>MLOps Engineer</h4>
-                        <p>Build and maintain ML infrastructure and pipelines</p>
-                        <div class="salary-range">$120K - $190K</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Career?</h2>
-                <p>Join thousands of successful AI/ML engineers who started their journey with us</p>
-                <div class="cta-buttons">
-                    <button class="cta-button primary large">
-                        <span>Enroll Now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                    <button class="cta-button secondary large">
-                        <i class="fas fa-calendar"></i>
-                        <span>Schedule Consultation</span>
-                    </button>
-                </div>
-                <div class="cta-guarantee">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>30-day money-back guarantee</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <i class="fas fa-brain"></i>
-                    <span>AI/ML Mastery</span>
-                    <p>Transforming careers through world-class AI education</p>
-                </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Course</h4>
-                        <a href="#overview">Overview</a>
-                        <a href="#curriculum">Curriculum</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#resources">Resources</a>
-                    </div>
-                    <div class="link-group">
-                        <h4>Support</h4>
-                        <a href="#">Help Center</a>
-                        <a href="#">Community</a>
-                        <a href="#">Contact Us</a>
-                        <a href="#">FAQ</a>
-                    </div>
-                    <div class="link-group">
-                        <h4>Company</h4>
-                        <a href="#">About Us</a>
-                        <a href="#">Careers</a>
-                        <a href="#">Blog</a>
-                        <a href="#">Press</a>
-                    </div>
-                </div>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 AI/ML Mastery. All rights reserved. Transform your career with artificial intelligence.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.opacity = '1';
+                backToTopButton.style.visibility = 'visible';
+            } else {
+                backToTopButton.style.opacity = '0';
+                backToTopButton.style.visibility = 'hidden';
+            }
+        });
+    </script>
 </body>
 </html>
